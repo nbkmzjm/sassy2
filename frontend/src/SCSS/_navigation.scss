@@ -1,0 +1,22 @@
+.navbar-brand img {
+   height: 4rem;
+}
+
+.navbar {
+   font-size: 1.15 rem;
+   font-weight: 500;
+   letter-spacing: 0.15rem;
+   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.237);
+   z-index: 1;
+}
+
+.nav-item {
+   padding: 0.5rem;
+}
+.nav-link.active,
+.nav-link:hover {
+   color: #7ac4b7 !important;
+}
+.nav-link {
+   color: whitesmoke !important;
+}
