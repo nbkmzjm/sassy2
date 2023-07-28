@@ -19,47 +19,42 @@ import Authen from './component/Authen.js';
 import { auth } from './config/firebase';
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer } from 'react-toastify';
+import ServicesScreen from './screens/ServicesScreen';
+import { useState } from 'react';
+import BookingScreen from './screens/BookingScreen';
 
 function App() {
+   const [activeLink, setActiveLink] = useState('Home');
+
+   const navLinkHandler = (link) => {
+      setActiveLink(link);
+   };
+
    return (
       <BrowserRouter>
          <div className="App">
             <ToastContainer position="bottom-center" limit={1} />
             <header className="">
                <div className="top-bar">
-                  <div>
-                     <Authen />
-                  </div>
+                  <div>{/* <Authen /> */}</div>
                   <div className="container-fluid location-info">
                      <div className="row text-left">
                         <div className="col-6"></div>
                         <div className="col-3">
                            {console.log(auth.currentUser)}
                            <p>
+                              <i class="fas fa-phone"></i>
                               <a href="/">Call us at: 623-225-6933</a>
                            </p>
                            <p>
+                              <i class="fa-solid fa-location-dot"></i> :
                               <a href="/">
                                  11435 W Buckeye Rd #102, Avondale, AZ
                               </a>
                            </p>
                            <p>
-                              <a href="/">Sassynails2.buckeye@gmail.com</a>
-                           </p>
-                           <p>
-                              <a href="/">zota.zbook.us/sassy11435_booking</a>
-                           </p>
-                        </div>
-                        <div className="col-3">
-                           <p>
-                              <a href="/">Call us at: 623-225-6933</a>
-                           </p>
-                           <p>
-                              <a href="/">
-                                 11435 W Buckeye Rd #102, Avondale, AZ
-                              </a>
-                           </p>
-                           <p>
+                              <i class="fas fa-envelope"></i>
+                              _____
                               <a href="/">Sassynails2.buckeye@gmail.com</a>
                            </p>
                            <p>
@@ -90,105 +85,68 @@ function App() {
                      <div className="collapse navbar-collapse" id="navbarResp">
                         <ul className="navbar-nav lm-auto">
                            <li className="nav-item">
-                              <a href="" className="nav-link active">
+                              <Link
+                                 to="/"
+                                 className={`nav-link ${
+                                    activeLink === 'Home' ? 'active' : ''
+                                 }`}
+                                 onClick={() => navLinkHandler('Home')}
+                              >
                                  Home
-                              </a>
+                              </Link>
                            </li>
                            <li className="nav-item">
-                              <a href="" className="nav-link">
+                              <Link
+                                 to="/services"
+                                 className={`nav-link ${
+                                    activeLink === 'Services' ? 'active' : ''
+                                 }`}
+                                 onClick={() => navLinkHandler('Services')}
+                              >
                                  Services
-                              </a>
+                              </Link>
                            </li>
                            <li className="nav-item">
-                              <a href="" className="nav-link">
+                              <Link
+                                 to=""
+                                 className={`nav-link ${
+                                    activeLink === 'Gallery' ? 'active' : ''
+                                 }`}
+                                 onClick={() => navLinkHandler('Gallery')}
+                              >
                                  Gallery
-                              </a>
+                              </Link>
                            </li>
                            <li className="nav-item">
-                              <a href="" className="nav-link">
+                              <Link to="/booking" className="nav-link">
                                  Booking
-                              </a>
+                              </Link>
                            </li>
                            <li className="nav-item">
-                              <a href="" className="nav-link">
+                              <Link to="" className="nav-link">
                                  Testimonials
-                              </a>
+                              </Link>
                            </li>
                            <li className="nav-item">
-                              <a href="" className="nav-link">
+                              <Link to="" className="nav-link">
                                  Giftcard
-                              </a>
+                              </Link>
                            </li>
                            <li className="nav-item">
-                              <a href="" className="nav-link">
+                              <Link to="" className="nav-link">
                                  About Us
-                              </a>
+                              </Link>
                            </li>
                         </ul>
                      </div>
                   </div>
                </nav>
-
-               {/* <Navbar bg="dark" variant="dark" expand="sm">
-                  <Container fluid="lg">
-                     <LinkContainer to="/">
-                        <Navbar.Brand>SASSY Nail and Spa</Navbar.Brand>
-                     </LinkContainer>
-                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
-
-                     <Navbar.Collapse id="basic-navbar-nav">
-                        <Nav className=" justify-content-center">
-                           <Link className="nav-link" to="/">
-                              Home
-                           </Link>
-                           <Link className="nav-link" to="/">
-                              Menu
-                           </Link>
-                           <Link className="nav-link" to="/">
-                              Gallery
-                           </Link>
-                           <Link className="nav-link" to="/">
-                              Booking
-                           </Link>
-                           <Link className="nav-link" to="/">
-                              Testimonials
-                           </Link>
-                           <Link className="nav-link" to="/">
-                              Giftcard
-                           </Link>
-                           <Link className="nav-link" to="/">
-                              FAQ
-                           </Link>
-                           <Link className="nav-link" to="/">
-                              About Us
-                           </Link>
-
-                           <NavDropdown
-                              title="Dropdown"
-                              id="basic-nav-dropdown"
-                           >
-                              <NavDropdown.Item href="#action/3.1">
-                                 Action
-                              </NavDropdown.Item>
-                              <NavDropdown.Item href="#action/3.2">
-                                 Another action
-                              </NavDropdown.Item>
-                              <NavDropdown.Item href="#action/3.3">
-                                 Something
-                              </NavDropdown.Item>
-                              <NavDropdown.Divider />
-                              <NavDropdown.Item href="#action/3.4">
-                                 Separated link
-                              </NavDropdown.Item>
-                           </NavDropdown>
-                        </Nav>
-                     </Navbar.Collapse>
-                  </Container>
-               </Navbar> */}
             </header>
             <main>
                <Routes>
                   <Route path="/" element={<HomeScreen />}></Route>
+                  <Route path="/services" element={<ServicesScreen />}></Route>
+                  <Route path="/booking" element={<BookingScreen />}></Route>
                </Routes>
             </main>
          </div>

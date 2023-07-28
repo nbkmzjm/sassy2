@@ -1,8 +1,11 @@
 @import './navigation';
 @import './home';
+@import './services';
+// @import './config';
+$primary_color: #7ac4b7;
 
 .top-bar {
-   background: #7ac4b7;
+   background: $primary_color;
    height: auto;
    padding: 1rem 0;
 }
@@ -17,4 +20,9 @@
    color: aliceblue;
    text-decoration: None;
    font-size: 1rem;
+}
+
+.link-no-decoration {
+   text-decoration: none;
+   color: black;
 }

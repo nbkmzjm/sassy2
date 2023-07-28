@@ -8,8 +8,8 @@ function Authen() {
    const [password, setPassword] = useState('');
 
    const signinHandle = async () => {
-      // await signInWithGoogle(auth, email, password);
       await signInWithPopup(auth, signInWithGoogle);
+      // await signInWithPopup(auth, signInWithGoogle);
       console.log(auth.currentUser);
       toast('Successfully Logged In');
    };
@@ -18,6 +18,7 @@ function Authen() {
       try {
          await auth.signOut();
          toast('Signed Out Successfully');
+         console.log(auth.currentUser);
       } catch (error) {
          console.log(error);
          toast.error(error);

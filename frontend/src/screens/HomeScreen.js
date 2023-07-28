@@ -27,7 +27,7 @@ export default function HomeScreen() {
             data-bs-interval="3000"
          >
             <div className="carousel-inner">
-               {carouselData1.map((item) => (
+               {/* {carouselData1.map((item) => (
                   <div className="carousel-item active">
                      {console.log(item.src)}
                      <img
@@ -36,9 +36,17 @@ export default function HomeScreen() {
                         className="d-block w-100"
                      />
                   </div>
-               ))}
+               ))} */}
 
-               {/* <div className="carousel-item">
+               <div className="carousel-item active">
+                  <img
+                     src={require('../asset/picture/CB2.jpg')}
+                     alt="slide2"
+                     className="d-block w-100"
+                  />
+               </div>
+
+               <div className="carousel-item">
                   <img
                      src={require('../asset/picture/summer10.jpg')}
                      alt="slide2"
@@ -58,7 +66,7 @@ export default function HomeScreen() {
                      alt="slide4"
                      className="d-block w-100"
                   />
-               </div> */}
+               </div>
                <button
                   class="carousel-control-prev"
                   type="button"
@@ -239,89 +247,3 @@ export default function HomeScreen() {
       </div>
    );
 }
-/* <section style={{ height: '10px' }}>
-            <h3>Welcome to Sassy Nails & Spa</h3>
-            <p>
-               your destination for luxurious nail care and stunning nail art.
-               Step into our relaxing salon and indulge in a pampering
-               experience that will leave you feeling rejuvenated and glamorous
-            </p>
-         </section>
-         <section>
-            <Carousel style={{ maxHeight: '100px' }}>
-
-               
-               <Carousel.Item>
-                  <img
-                     className="d-block w-100"
-                     src="https://m.media-amazon.com/images/I/B1DBWbloIpS._CLa%7C2140%2C2000%7C91y%2B4ymrM4L.png%7C0%2C0%2C2140%2C2000%2B0.0%2C0.0%2C2140.0%2C2000.0_AC_UL1500_.png"
-                     alt="First slide"
-                  />
-                  <Carousel.Caption>
-                     <h3>First slide label</h3>
-                     <p>
-                        Nulla vitae elit libero, a pharetra augue mollis
-                        interdum.
-                     </p>
-                  </Carousel.Caption>
-               </Carousel.Item>
-               <Carousel.Item>
-                  <img
-                     className="d-block w-100"
-                     src="https://i5.walmartimages.com/asr/0ec1b72b-a123-48ff-bf98-6da928961de7.18a7b7de3003eeecd8db166e91532cae.jpeg"
-                     alt="Second slide"
-                  />
-
-                  <Carousel.Caption>
-                     <h3>Second slide label</h3>
-                     <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                     </p>
-                  </Carousel.Caption>
-               </Carousel.Item>
-               <Carousel.Item>
-                  <img
-                     className="d-block w-100"
-                     src="https://m.media-amazon.com/images/I/B1pDnrUmaHS._CLa%7C2140%2C2000%7C91qSQl4VrZL.png%7C0%2C0%2C2140%2C2000%2B0.0%2C0.0%2C2140.0%2C2000.0_AC_UL1500_.png"
-                     alt="Third slide"
-                  />
-
-                  <Carousel.Caption>
-                     <h3>Third slide label</h3>
-                     <p>
-                        Praesent commodo cursus magna, vel scelerisque nisl
-                        consectetur.
-                     </p>
-                  </Carousel.Caption>
-               </Carousel.Item>
-            </Carousel>
-         </section> */
-
-/* <Row>
-            <Col md={12}>
-               <p style={{ fontSize: '1.5rem' }}>
-                  Welcome to Sassy Nails & Spa
-               </p>{' '}
-               your destination for luxurious nail care and stunning nail art.
-               Step into our relaxing salon and indulge in a pampering
-               experience that will leave you feeling rejuvenated and
-               glamorous."
-            </Col>
-         </Row>
-         <Row>
-            <Col>
-               <div class="p-3 mb-2 bg-secondary text-white"></div>
-            </Col>
-         </Row>
-
-         <Row>
-            <Col>
-               <p style={{ fontSize: '1.5rem' }}>Services</p>
-               <p>
-                  At Sassy Nails & Spa, we offer a wide range of nail services
-                  tailored to your individual needs. From classic manicures and
-                  pedicures to intricate nail art designs, our talented nail
-                  technicians will create the perfect look for any occasion
-               </p>
-            </Col>
-         </Row> */

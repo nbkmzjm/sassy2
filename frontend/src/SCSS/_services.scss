@@ -1,0 +1,179 @@
+$primary_color: #7ac4b7;
+
+.serviceScreen h1 {
+   background: $primary_color;
+}
+
+.pedicure-label {
+   width: auto; /* Set the width of the div */
+   height: 250px; /* Set the height of the div */
+   background-image: url('../asset/picture/pedicure.webp');
+   background-size: cover; /* Adjust the image size to cover the entire div */
+   background-position: center; /* Center the background image */
+   /* You can add more styles for the div here */
+
+   p {
+      position: absolute;
+      font-size: 5rem;
+      color: antiquewhite;
+      font-family: 'Dancing Script';
+   }
+}
+
+.pedicure-label::before,
+.manicure-label::before,
+.wax-label::before,
+.child-label::before,
+.addon-label::before,
+.addition-label::before,
+.lash-label::before,
+.acrylic-label::before {
+   content: '';
+   position: relative;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 70%;
+   background-color: rgba(
+      0,
+      0,
+      0,
+      0.3
+   ); /* Adjust the alpha value (0.5) to control the darkness */
+   z-index: 1;
+}
+.manicure-label {
+   width: auto; /* Set the width of the div */
+   height: 250px; /* Set the height of the div */
+   background-image: url('../asset/picture/manicure.jpg');
+   background-size: cover; /* Adjust the image size to cover the entire div */
+   background-position: bottom; /* Center the background image */
+   /* You can add more styles for the div here */
+
+   p {
+      position: absolute;
+      font-size: 5rem;
+      color: antiquewhite;
+      font-family: 'Dancing Script';
+   }
+}
+.acrylic-label {
+   width: auto; /* Set the width of the div */
+   height: 250px; /* Set the height of the div */
+   background-image: url('../asset/picture/acrylic.jpg');
+   background-size: cover; /* Adjust the image size to cover the entire div */
+   background-position: center; /* Center the background image */
+   /* You can add more styles for the div here */
+
+   p {
+      position: absolute;
+      font-size: 5rem;
+      color: antiquewhite;
+      font-family: 'Dancing Script';
+   }
+}
+.addon-label {
+   width: auto; /* Set the width of the div */
+   height: 250px; /* Set the height of the div */
+   background-image: url('../asset/picture/menuAddon.jpg');
+   background-size: cover; /* Adjust the image size to cover the entire div */
+   background-position: center; /* Center the background image */
+   /* You can add more styles for the div here */
+
+   p {
+      position: absolute;
+      font-size: 5rem;
+      color: antiquewhite;
+      font-family: 'Dancing Script';
+   }
+}
+.addition-label {
+   width: auto; /* Set the width of the div */
+   height: 250px; /* Set the height of the div */
+   background-image: url('../asset/picture/menuAddtion.jpg');
+   background-size: cover; /* Adjust the image size to cover the entire div */
+   background-position: center; /* Center the background image */
+   /* You can add more styles for the div here */
+
+   p {
+      position: absolute;
+      font-size: 5rem;
+      color: antiquewhite;
+      font-family: 'Dancing Script';
+   }
+}
+
+.wax-label {
+   width: auto; /* Set the width of the div */
+   height: 250px; /* Set the height of the div */
+   background-image: url('../asset/picture/waxing.jpg');
+   background-size: cover; /* Adjust the image size to cover the entire div */
+   background-position: center; /* Center the background image */
+   /* You can add more styles for the div here */
+
+   p {
+      position: absolute;
+      font-size: 5rem;
+      color: antiquewhite;
+      font-family: 'Dancing Script';
+   }
+}
+.child-label {
+   width: auto; /* Set the width of the div */
+   height: 250px; /* Set the height of the div */
+   background-image: url('../asset/picture/kidnail.jpeg');
+   background-size: cover; /* Adjust the image size to cover the entire div */
+   background-position: center; /* Center the background image */
+   /* You can add more styles for the div here */
+
+   p {
+      position: absolute;
+      font-size: 5rem;
+      color: antiquewhite;
+      font-family: 'Dancing Script';
+   }
+}
+
+.lash-label {
+   width: auto; /* Set the width of the div */
+   height: 250px; /* Set the height of the div */
+   background-image: url('../asset/picture/eyelash.webp');
+   background-size: cover; /* Adjust the image size to cover the entire div */
+   background-position-y: 60%; /* Center the background image */
+   /* You can add more styles for the div here */
+
+   p {
+      position: absolute;
+      font-size: 5rem;
+      color: antiquewhite;
+      font-family: 'Dancing Script';
+   }
+}
+.pedicure-img {
+   width: 150px; /* Adjust the size of the hexagon */
+   height: 150px; /* Make sure it's a square to maintain aspect ratio */
+   background-color: #ccc; /* Optional: Add a background color */
+   clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+   //    polygon(50% 0%, 85% 10%, 100% 50%, 85% 90%, 50% 100%, 15% 90%, 0% 50%, 15% 10%)
+   margin: 10px; /* Optional: Add margin to create spacing between thumbnails */
+   overflow: hidden;
+}
+
+.pedicure-img img {
+   width: 100%;
+   height: auto;
+   display: block;
+}
+
+.service-title {
+   .link-no-decoration,
+   span {
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+      font-size: 1.3rem;
+      font-weight: 400;
+   }
+}
+
+.acrylic-menu {
+   font-size: 1rem !important;
+}
