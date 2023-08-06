@@ -1,26 +1,29 @@
 {
   "files": {
-    "main.css": "/static/css/main.35817bbe.css",
-    "main.js": "/static/js/main.8d78a65e.js",
+    "main.css": "/static/css/main.823b4d93.css",
+    "main.js": "/static/js/main.8fab478c.js",
     "static/js/787.cda612ba.chunk.js": "/static/js/787.cda612ba.chunk.js",
     "static/media/CB2.jpg": "/static/media/CB2.1b470b9edbec6d5e5cd6.jpg",
     "static/media/pedicure.webp": "/static/media/pedicure.419163fcda9309e71ce5.webp",
     "static/media/eyelash.webp": "/static/media/eyelash.541cdec81fddf27251cf.webp",
     "static/media/acrylic.jpg": "/static/media/acrylic.9a5245adc94558b1c345.jpg",
     "static/media/summer10.jpg": "/static/media/summer10.fc82c8755b7144fdf3af.jpg",
+    "static/media/design2.jpg": "/static/media/design2.e36d2f5701711a12c31d.jpg",
     "static/media/az-nail-salon-1.jpg": "/static/media/az-nail-salon-1.ac83ae2fd612387a026e.jpg",
     "static/media/design1.jpg": "/static/media/design1.9ac025032b8cfbe03c5d.jpg",
     "static/media/waxing.jpg": "/static/media/waxing.eed9a3525d39e205012d.jpg",
     "static/media/kidnail.jpeg": "/static/media/kidnail.03395c0ff9e7775a46cf.jpeg",
+    "static/media/menuAddon.jpg": "/static/media/menuAddon.9cce588b272948ec46e3.jpg",
     "static/media/manicure.jpg": "/static/media/manicure.409f7f087db32554e993.jpg",
+    "static/media/menuAddtion.jpg": "/static/media/menuAddtion.b247ae051ec003501550.jpg",
     "static/media/logo.svg": "/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
     "index.html": "/index.html",
-    "main.35817bbe.css.map": "/static/css/main.35817bbe.css.map",
-    "main.8d78a65e.js.map": "/static/js/main.8d78a65e.js.map",
+    "main.823b4d93.css.map": "/static/css/main.823b4d93.css.map",
+    "main.8fab478c.js.map": "/static/js/main.8fab478c.js.map",
     "787.cda612ba.chunk.js.map": "/static/js/787.cda612ba.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.35817bbe.css",
-    "static/js/main.8d78a65e.js"
+    "static/css/main.823b4d93.css",
+    "static/js/main.8fab478c.js"
   ]
 }

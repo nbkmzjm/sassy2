@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Carousel, Col, Row } from 'react-bootstrap';
 
 // import data from '../data';
@@ -18,6 +18,16 @@ export default function HomeScreen() {
          alt: 'carousel3',
       },
    ];
+
+   useEffect(() => {
+      const carouselElement = document.querySelector('#carousel');
+      const carousel = new window.bootstrap.Carousel(carouselElement, {
+         // interval: 2000,
+         // pause: 'hover',
+      });
+
+      carousel.cycle(); // Start the carousel
+   });
    return (
       <div>
          <div
@@ -40,9 +50,9 @@ export default function HomeScreen() {
 
                <div className="carousel-item active">
                   <img
-                     src={require('../asset/picture/CB2.jpg')}
+                     src={require('../asset/picture/pool10.jpg')}
                      alt="slide2"
-                     className="d-block w-100"
+                     className="d-block w-75 mx-auto"
                   />
                </div>
 
@@ -50,46 +60,46 @@ export default function HomeScreen() {
                   <img
                      src={require('../asset/picture/summer10.jpg')}
                      alt="slide2"
-                     className="d-block w-100"
+                     className="d-block w-75 mx-auto"
                   />
                </div>
                <div className="carousel-item">
                   <img
-                     src={require('../asset/picture/design1.jpg')}
+                     src={require('../asset/picture/acrylic.jpg')}
                      alt="slide3"
-                     className="d-block w-100"
+                     className="d-block w-75 mx-auto"
                   />
                </div>
                <div className="carousel-item">
                   <img
-                     src={require('../asset/picture/design2.jpg')}
+                     src={require('../asset/picture/pedicure.webp')}
                      alt="slide4"
-                     className="d-block w-100"
+                     className="d-block w-75 mx-auto"
                   />
                </div>
                <button
-                  class="carousel-control-prev"
+                  className="carousel-control-prev"
                   type="button"
                   data-bs-target="#carousel"
                   data-bs-slide="prev"
                >
                   <span
-                     class="carousel-control-prev-icon"
+                     className="carousel-control-prev-icon"
                      aria-hidden="true"
                   ></span>
-                  <span class="visually-hidden">Previous</span>
+                  <span className="visually-hidden">Previous</span>
                </button>
                <button
-                  class="carousel-control-next"
+                  className="carousel-control-next"
                   type="button"
                   data-bs-target="#carousel"
                   data-bs-slide="next"
                >
                   <span
-                     class="carousel-control-next-icon"
+                     className="carousel-control-next-icon"
                      aria-hidden="true"
                   ></span>
-                  <span class="visually-hidden">Next</span>
+                  <span className="visually-hidden">Next</span>
                </button>
             </div>
          </div>
@@ -129,12 +139,16 @@ export default function HomeScreen() {
          {/* Our services */}
          <div className="services">
             <div className="container mt-5">
-               <div className="row">
-                  <div className="col">
+               <div className="d-flex flex-column flex-lg-row">
+                  <div className="col-12 col-lg-6">
                      <div className="d-flex">
-                        <div className="col-6 d-flex align-items-center">
+                        <div className="col-6 d-flex justify-content-center align-items-center">
                            <div>
-                              <p>PEDICURE ...........60 min</p>
+                              <p>
+                                 PEDICURE
+                                 <br />
+                                 30-60 min
+                              </p>
                               <p className="price">$30 to $80+</p>
                            </div>
                         </div>
@@ -148,9 +162,13 @@ export default function HomeScreen() {
                         </div>
                      </div>
                      <div className="d-flex">
-                        <div className="col-6 d-flex align-items-center ">
+                        <div className="col-6 d-flex justify-content-center align-items-center ">
                            <div className="justify-content-center">
-                              <p>MANICURE...........30 min</p>
+                              <p>
+                                 MANICURE
+                                 <br />
+                                 15-30 min
+                              </p>
                               <p className="price"> $30 to $80+</p>
                            </div>
                         </div>
@@ -164,10 +182,14 @@ export default function HomeScreen() {
                         </div>
                      </div>
                      <div className="d-flex">
-                        <div className="col-6 d-flex align-items-center">
+                        <div className="col-6 d-flex justify-content-center align-items-center">
                            <div>
                               {' '}
-                              <p>ACRYLIC ..........90 min</p>
+                              <p>
+                                 ACRYLIC
+                                 <br />
+                                 60-90 min
+                              </p>
                               <p className="price">$30 to $80+</p>
                            </div>
                         </div>
@@ -181,12 +203,16 @@ export default function HomeScreen() {
                         </div>
                      </div>
                   </div>
-                  <div className="col">
+                  <div className="col-12 col-lg-6">
                      {' '}
                      <div className="d-flex">
-                        <div className="col-6 d-flex align-items-center">
+                        <div className="col-6 d-flex justify-content-center align-items-center">
                            <div>
-                              <p>WAXING.............15 min</p>
+                              <p>
+                                 WAXING
+                                 <br />
+                                 10-20 min
+                              </p>
                               <p className="price">$8 to $25+</p>
                            </div>
                         </div>
@@ -200,9 +226,13 @@ export default function HomeScreen() {
                         </div>
                      </div>
                      <div className="d-flex">
-                        <div className="col-6 d-flex align-items-center">
+                        <div className="col-6 d-flex justify-content-center align-items-center">
                            <div>
-                              <p>EYELASH EXT...........3 hr</p>
+                              <p>
+                                 EYELASH EXT
+                                 <br />
+                                 1-2 hr
+                              </p>
                               <p className="price">$200 to $300+</p>
                            </div>
                         </div>
@@ -215,11 +245,15 @@ export default function HomeScreen() {
                            />
                         </div>
                      </div>
-                     <div className="d-flex d-flex align-items-center">
-                        <div className="col-6">
+                     <div className="d-flex ">
+                        <div className="col-6 d-flex justify-content-center align-items-center">
                            <div>
                               {' '}
-                              <p>CHILDREN..........30 min</p>
+                              <p>
+                                 CHILDREN
+                                 <br />
+                                 30-45 min
+                              </p>
                               <p className="price">$15 to $30+</p>
                            </div>
                         </div>
@@ -239,11 +273,11 @@ export default function HomeScreen() {
 
          {/* Our Gallery */}
 
-         <div className="gallery">
+         {/* <div className="gallery">
             <div>Our Galleries</div>
 
             <div></div>
-         </div>
+         </div> */}
       </div>
    );
 }

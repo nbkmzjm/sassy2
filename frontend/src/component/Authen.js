@@ -1,23 +1,41 @@
-import { useState, React } from 'react';
+import { useState, React, useContext } from 'react';
 import { auth, signInWithGoogle } from '../config/firebase';
 import { createUserWithEmailAndPassword, signInWithPopup } from 'firebase/auth';
 import { toast } from 'react-toastify';
+import { Store } from '../Store';
+import { useNavigate } from 'react-router-dom';
 
 function Authen() {
    const [email, setEmail] = useState('');
    const [password, setPassword] = useState('');
+   const { state, dispatch: ctxDispatch } = useContext(Store);
+   const { userInfo } = state;
+   const navigate = useNavigate();
+   console.log('State:', state);
 
    const signinHandle = async () => {
       await signInWithPopup(auth, signInWithGoogle);
       // await signInWithPopup(auth, signInWithGoogle);
       console.log(auth.currentUser);
       toast('Successfully Logged In');
+      if (auth.currentUser.email === 'sassynails2.buckeye@gmail.com') {
+         ctxDispatch({ type: 'USER_SIGNIN', payload: auth.currentUser });
+         localStorage.setItem('userInfo', JSON.stringify(auth.currentUser));
+         navigate('/');
+      } else {
+         ctxDispatch({ type: 'USER_SIGNOUT' });
+         localStorage.removeItem('userInfo');
+         toast.error('You are not authorized to enter Admin menu');
+         window.location.reload();
+      }
    };
 
    const signoutHandle = async () => {
       try {
          await auth.signOut();
          toast('Signed Out Successfully');
+         ctxDispatch({ type: 'USER_SIGNOUT' });
+         localStorage.removeItem('userInfo');
          console.log(auth.currentUser);
       } catch (error) {
          console.log(error);
@@ -25,8 +43,8 @@ function Authen() {
       }
    };
    return (
-      <div>
-         <input
+      <div className="inOutBtn">
+         {/* <input
             placeholder="Email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
@@ -35,9 +53,13 @@ function Authen() {
             placeholder="Password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-         />
-         <button onClick={signinHandle}>Sign In</button>
-         <button onClick={signoutHandle}>Sign Out</button>
+         /> */}
+         {console.log(userInfo)}
+         {userInfo ? (
+            <button onClick={signoutHandle}>SignOut</button>
+         ) : (
+            <button onClick={signinHandle}>SignIn</button>
+         )}
       </div>
    );
 }

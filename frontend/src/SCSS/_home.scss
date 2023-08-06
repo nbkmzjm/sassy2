@@ -2,7 +2,12 @@
    box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.5);
 }
 .carousel-inner {
-   max-height: 38rem !important;
+   max-height: auto !important;
+}
+
+.w-70 {
+   width: 70%;
+   height: auto; /* Keep the aspect ratio intact */
 }
 
 .carousel-item-next,
@@ -43,7 +48,7 @@
 }
 
 .gallery {
-   font-family: 'Dancing Script';
+   font-family: '';
    font-size: 5rem;
    text-align: center;
    color: rgb(231, 114, 12);
