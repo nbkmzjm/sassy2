@@ -30,13 +30,13 @@ import { useContext, useState } from 'react';
 import BookingScreen from './screens/BookingScreen';
 import { Store } from './Store';
 import AdminSreen from './screens/AdminSreen';
+import MyModal from './component/Modal';
 
 function App() {
    const { state } = useContext(Store);
    const { userInfo } = state;
    const [activeLink, setActiveLink] = useState('Home');
    // const navigate = useNavigate();
-   const bookHandler = () => {};
    const address = '11435 W Buckeye Rd #101, Avondale, AZ';
 
    const navLinkHandler = (link) => {
@@ -49,13 +49,13 @@ function App() {
             <ToastContainer position="bottom-center" limit={1} />
             <header className="">
                <div className="top-bar">
-                  <div className="mt-3">
+                  <div className="mt-5">
                      <Authen />
                   </div>
                   <div className="container-fluid  location-info mt-5">
                      <div className="d-flex justify-content-end flex-column flex-lg-row">
                         <div className="d-flex justify-content-center me-3 col-12 col-lg-6">
-                           {/* <iframe
+                           <iframe
                               src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13318.360018234867!2d-112.3046247!3d33.4339319!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x872b3ee68c84ba73%3A0x9d460226542a5aa8!2sSassy%20Nails%20%26%20Spa%20-%20MC85!5e0!3m2!1sen!2sus!4v1690570678760!5m2!1sen!2sus"
                               width="400"
                               height="200"
@@ -63,7 +63,7 @@ function App() {
                               allowfullscreen=""
                               loading="lazy"
                               referrerpolicy="no-referrer-when-downgrade"
-                           ></iframe> */}
+                           ></iframe>
                            {/* <iframe
                               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3329.032799823551!2d-112.3102534848007!3d33.44845198077452!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x872b3f1ed4815781%3A0xc26dfd277105f0ff!2sSassy%20Nails%20%26%20Spa%20-%20Avondale!5e0!3m2!1sen!2sus!4v1690570264167!5m2!1sen!2sus"
                               width="300"
@@ -103,21 +103,35 @@ function App() {
                            <div
                               style={{
                                  position: 'fixed',
-                                 right: '0rem',
+                                 right: '-4rem',
                                  zIndex: '3',
+                                 // translateX: '50%',
                               }}
-                              className="d-flex justify-content-center"
+                              className="d-flex justify-content-center flex-column"
                            >
-                              {' '}
-                              <Link to="/booking" className="">
-                                 <button
-                                    type="button"
-                                    className="btn btn-dark  btn-lg"
-                                    onClick={bookHandler}
+                              <div className="mt-5 me-1">
+                                 <Link to="/booking" className="">
+                                    <button
+                                       type="button"
+                                       className="btn btn-dark  btn-lg mb-5 rotated"
+                                    >
+                                       Book Online
+                                    </button>
+                                 </Link>
+                              </div>
+                              <div className="mt-5 me-1 ps--3">
+                                 <Link
+                                    to="https://goo.gl/maps/5Gbh7edioygNQaeP7"
+                                    className=""
                                  >
-                                    Book Now
-                                 </button>
-                              </Link>
+                                    <button
+                                       type="button"
+                                       className="btn btn-dark  btn-lg mt-3 rotated "
+                                    >
+                                       Get Direction
+                                    </button>
+                                 </Link>
+                              </div>
                            </div>
                         </div>
                      </div>
@@ -127,7 +141,7 @@ function App() {
                   <div className="container">
                      <a href="/" className="navbar-brand">
                         <img
-                           src="https://drive.google.com/uc?export=view&id=197lt3bm6bCGCMGehX0qSSkSRLAt8Oa83"
+                           src="https://firebasestorage.googleapis.com/v0/b/sassymc85.appspot.com/o/images%2FsassyLogo.jpeg?alt=media&token=571d12f3-54fa-44eb-9cc3-4ae77f188e74"
                            alt="sassy"
                         />
                      </a>
@@ -211,6 +225,10 @@ function App() {
                </nav>
             </header>
             <main>
+               <div>
+                  {console.log()}
+                  {userInfo && <MyModal />}
+               </div>
                <Routes>
                   <Route path="/" element={<HomeScreen />}></Route>
                   <Route path="/services" element={<ServicesScreen />}></Route>

@@ -43,7 +43,7 @@ function Authen() {
       }
    };
    return (
-      <div className="inOutBtn">
+      <div className="signInBtn">
          {/* <input
             placeholder="Email"
             value={email}
@@ -56,9 +56,13 @@ function Authen() {
          /> */}
          {console.log(userInfo)}
          {userInfo ? (
-            <button onClick={signoutHandle}>SignOut</button>
+            <button className="btn btn-primary" onClick={signoutHandle}>
+               SignOut
+            </button>
          ) : (
-            <button onClick={signinHandle}>SignIn</button>
+            <button className="btn btn-primary" onClick={signinHandle}>
+               SignIn
+            </button>
          )}
       </div>
    );

@@ -6,6 +6,8 @@ const initialState = {
    userInfo: localStorage.getItem('userInfo')
       ? JSON.parse(localStorage.getItem('userInfo'))
       : null,
+   imageSelected: null,
+   imageLocationId: '',
 };
 
 function reducer(state, action) {
@@ -21,6 +23,18 @@ function reducer(state, action) {
             ...state,
             userInfo: null,
             // cart: { cartItems: [], shippingAddress: {}, paymentMethod: '' },
+         };
+
+      case 'SELECT_IMAGE':
+         return {
+            ...state,
+            imageSelected: action.payload,
+         };
+
+      case 'SET_IMAGE_ID':
+         return {
+            ...state,
+            imageLocationId: action.payload,
          };
 
       default:

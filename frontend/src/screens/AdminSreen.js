@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
 import { addDoc, collection } from 'firebase/firestore';
 import { db, storage } from '../config/firebase';
@@ -8,25 +8,35 @@ import MyModal from '../component/Modal';
 
 export default function AdminSreen() {
    const [imageFile, setImageFile] = useState(null);
+   const fileInputRef = useRef(null);
 
    const handleFileChange = (e) => {
       const file = e.target.files[0];
       setImageFile(file);
    };
 
-   const showImageHandler = () => {};
+   const showImageHandler = () => {
+      var imageGalleryModal = new window.bootstrap.Modal(
+         document.getElementById('exampleModal')
+      );
+      imageGalleryModal.show();
+   };
 
    const uploadHandler = async () => {
       console.log('adding images');
       if (!imageFile) return;
-      setImageFile(null);
 
       const storageRef = ref(storage, 'images/' + imageFile.name);
+
+      // image/jpeg
+      // video/mp4
 
       uploadBytes(storageRef, imageFile)
          .then((snapshot) => {
             console.log('Image uploaded successfully');
             // You can get the download URL of the uploaded image
+            const contentType = snapshot.metadata.contentType;
+            console.log('contentType:', contentType);
             getDownloadURL(snapshot.ref).then(async (downloadURL) => {
                console.log('Download URL:', downloadURL);
                try {
@@ -34,8 +44,17 @@ export default function AdminSreen() {
                   await addDoc(imageRef, {
                      name: imageFile.name,
                      imageUrl: downloadURL,
+                     contentType: contentType,
                   });
                   console.log('image succesfully Added');
+                  setImageFile(null);
+                  if (fileInputRef.current) {
+                     fileInputRef.current.value = '';
+                  }
+                  var imageGalleryModal = new window.bootstrap.Modal(
+                     document.getElementById('exampleModal')
+                  );
+                  imageGalleryModal.show();
                } catch (error) {
                   console.log(error);
                   toast.error('Image is not added');
@@ -46,22 +65,27 @@ export default function AdminSreen() {
             console.error('Error uploading image:', error);
          });
    };
+
    return (
       <div>
          <div>
-            <input type="file" onChange={handleFileChange}></input>
+            {console.log('component render...')}
+            <input
+               type="file"
+               onChange={handleFileChange}
+               ref={fileInputRef}
+            ></input>
             <button className="btn btn-primary" onClick={uploadHandler}>
                Upload
             </button>
             <button
-               className="btn btn-primary"
+               className="btn btn-primary ms-2"
                onClick={showImageHandler}
-               data-bs-toggle="modal"
-               data-bs-target="#exampleModal"
+               // data-bs-toggle="modal"
+               // data-bs-target="#exampleModal"
             >
                Show Image Gallery
             </button>
-            <MyModal />
          </div>
       </div>
    );

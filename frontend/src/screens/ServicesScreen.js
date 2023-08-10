@@ -1,14 +1,28 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import MenuItem from '../component/MenuItem';
 import data from '../asset/data.js';
+import Image from '../component/Image';
 
 export default function ServicesScreen() {
    const menuItems1 = data.menuItems1;
    const menuItems2 = data.menuItems2;
+
+   const location = useLocation();
+
+   useEffect(() => {
+      if (location.hash) {
+         const scrollToElement = document.querySelector(location.hash);
+         if (scrollToElement) {
+            scrollToElement.scrollIntoView({ behavior: 'smooth' });
+         }
+      }
+   }, [location.hash]);
+
    return (
       <div>
          <div
+            id="pediMenu"
             className="d-flex align-items-center justify-content-center pedicure-label"
             style={{ height: '200px' }}
          >
@@ -17,11 +31,15 @@ export default function ServicesScreen() {
          <div className="container pedicure-menu ">
             <div className="row align-items-center pb-3 mb-3 border-bottom border-info-subtle">
                <div className="col-3">
-                  <img
+                  {/* <img
                      src={require('../asset/picture/pedicure.webp')}
                      alt=""
                      className="img-thumbnail pedicure-img"
-                  />
+                  /> */}
+                  <Image
+                     locationId="pediMenu1"
+                     imgClassName="img-fluid mt-5 img-thumbnail pedicure-img"
+                  ></Image>
                </div>
                <div className="col-8">
                   <div className="d-flex justify-content-between service-title">
@@ -45,11 +63,10 @@ export default function ServicesScreen() {
             <div className="row align-items-center pb-3 mb-3 border-bottom border-info-subtle">
                <div className="col-1"></div>
                <div className="col-3">
-                  <img
-                     src={require('../asset/picture/pedicure.webp')}
-                     alt=""
-                     className="img-thumbnail pedicure-img"
-                  />
+                  <Image
+                     locationId="pediMenu2"
+                     imgClassName="img-fluid mt-5 img-thumbnail pedicure-img"
+                  ></Image>
                </div>
                <div className="col-8">
                   <div className="d-flex justify-content-between service-title">
@@ -71,11 +88,10 @@ export default function ServicesScreen() {
             </div>
             <div className="row align-items-center pb-3 mb-3 border-bottom border-info-subtle">
                <div className="col-3">
-                  <img
-                     src={require('../asset/picture/pedicure.webp')}
-                     alt=""
-                     className="img-thumbnail pedicure-img"
-                  />
+                  <Image
+                     locationId="pediMenu3"
+                     imgClassName="img-fluid mt-5 img-thumbnail pedicure-img"
+                  ></Image>
                </div>
                <div className="col-8">
                   <div className="d-flex justify-content-between service-title">
@@ -97,11 +113,10 @@ export default function ServicesScreen() {
             <div className="row align-items-center pb-3 mb-3 border-bottom border-info-subtle">
                <div className="col-1"></div>
                <div className="col-3">
-                  <img
-                     src={require('../asset/picture/pedicure.webp')}
-                     alt=""
-                     className="img-thumbnail pedicure-img"
-                  />
+                  <Image
+                     locationId="pediMenu4"
+                     imgClassName="img-fluid mt-5 img-thumbnail pedicure-img"
+                  ></Image>
                </div>
                <div className="col-8">
                   <div className="d-flex justify-content-between service-title">
@@ -120,11 +135,10 @@ export default function ServicesScreen() {
             </div>
             <div className="row align-items-center pb-3 mb-3 border-bottom border-info-subtle">
                <div className="col-3">
-                  <img
-                     src={require('../asset/picture/pedicure.webp')}
-                     alt=""
-                     className="img-thumbnail pedicure-img"
-                  />
+                  <Image
+                     locationId="pediMenu5"
+                     imgClassName="img-fluid mt-5 img-thumbnail pedicure-img"
+                  ></Image>
                </div>
                <div className="col-8">
                   <div className="d-flex justify-content-between service-title">
@@ -145,11 +159,10 @@ export default function ServicesScreen() {
                <div className="col-1"></div>
 
                <div className="col-3">
-                  <img
-                     src={require('../asset/picture/pedicure.webp')}
-                     alt=""
-                     className="img-thumbnail pedicure-img"
-                  />
+                  <Image
+                     locationId="pediMenu6"
+                     imgClassName="img-fluid mt-5 img-thumbnail pedicure-img"
+                  ></Image>
                </div>
                <div className="col-8">
                   <div className="d-flex justify-content-between service-title">
@@ -167,11 +180,10 @@ export default function ServicesScreen() {
             </div>
             <div className="row align-items-center pb-3 mb-3 border-bottom border-info-subtle">
                <div className="col-3">
-                  <img
-                     src={require('../asset/picture/pedicure.webp')}
-                     alt=""
-                     className="img-thumbnail pedicure-img"
-                  />
+                  <Image
+                     locationId="pediMenu7"
+                     imgClassName="img-fluid mt-5 img-thumbnail pedicure-img"
+                  ></Image>
                </div>
                <div className="col-8">
                   <div className="d-flex justify-content-between service-title">
@@ -191,11 +203,10 @@ export default function ServicesScreen() {
                <div className="col-1"></div>
 
                <div className="col-3">
-                  <img
-                     src={require('../asset/picture/pedicure.webp')}
-                     alt=""
-                     className="img-thumbnail pedicure-img"
-                  />
+                  <Image
+                     locationId="pediMenu8"
+                     imgClassName="img-fluid mt-5 img-thumbnail pedicure-img"
+                  ></Image>
                </div>
                <div className="col-8">
                   <div className="d-flex justify-content-between service-title">
@@ -213,17 +224,19 @@ export default function ServicesScreen() {
             </div>
          </div>
 
-         <div className="d-flex align-items-center justify-content-center manicure-label">
+         <div
+            id="maniMenu"
+            className="d-flex align-items-center justify-content-center manicure-label"
+         >
             <p style={{ zIndex: 2 }}>MANICURE</p>
          </div>
          <div className="container ">
             <div className="row align-items-center pb-3 mb-3 border-bottom border-info-subtle">
                <div className="col-3">
-                  <img
-                     src={require('../asset/picture/manicure.jpg')}
-                     alt=""
-                     className="img-thumbnail pedicure-img"
-                  />
+                  <Image
+                     locationId="mediMenu1"
+                     imgClassName="img-fluid mt-5 img-thumbnail pedicure-img"
+                  ></Image>
                </div>
                <div className="col-8">
                   <div className="d-flex justify-content-between service-title">
@@ -245,11 +258,10 @@ export default function ServicesScreen() {
             <div className="row align-items-center pb-3 mb-3 border-bottom border-info-subtle">
                <div className="col-1"></div>
                <div className="col-3">
-                  <img
-                     src={require('../asset/picture/manicure.jpg')}
-                     alt=""
-                     className="img-thumbnail pedicure-img"
-                  />
+                  <Image
+                     locationId="mediMenu2"
+                     imgClassName="img-fluid mt-5 img-thumbnail pedicure-img"
+                  ></Image>
                </div>
                <div className="col-8">
                   <div className="d-flex justify-content-between service-title">
@@ -270,11 +282,10 @@ export default function ServicesScreen() {
             </div>
             <div className="row align-items-center pb-3 mb-3 border-bottom border-info-subtle">
                <div className="col-3">
-                  <img
-                     src={require('../asset/picture/manicure.jpg')}
-                     alt=""
-                     className="img-thumbnail pedicure-img"
-                  />
+                  <Image
+                     locationId="mediMenu3"
+                     imgClassName="img-fluid mt-5 img-thumbnail pedicure-img"
+                  ></Image>
                </div>
                <div className="col-8">
                   <div className="d-flex justify-content-between service-title">
@@ -293,7 +304,10 @@ export default function ServicesScreen() {
             </div>
          </div>
 
-         <div className="d-flex align-items-center justify-content-center acrylic-label">
+         <div
+            id="acrylicMenu"
+            className="d-flex align-items-center justify-content-center acrylic-label"
+         >
             <p style={{ zIndex: 2 }}>ACRYLIC</p>
          </div>
          <div className="container">
@@ -411,14 +425,17 @@ export default function ServicesScreen() {
          </div>
          <div className="container">
             <div className="d-flex flex-column flex-lg-row align-items-top">
-               <div className="col-12">
+               <div id="addonMenu" className="col-12">
                   {data.menuAddition.map((item) => (
                      <MenuItem nemuItem={item} />
                   ))}
                </div>
             </div>
          </div>
-         <div className="d-flex align-items-center justify-content-center wax-label">
+         <div
+            id="waxMenu"
+            className="d-flex align-items-center justify-content-center wax-label"
+         >
             <p style={{ zIndex: 2 }}>WAXING</p>
          </div>
          <div className="container">
@@ -440,7 +457,7 @@ export default function ServicesScreen() {
          </div>
          <div className="container">
             <div className="d-flex flex-column flex-lg-row align-items-top">
-               <div className="col-12">
+               <div id="childMenu" className="col-12">
                   {data.menuChild.map((item) => (
                      <MenuItem nemuItem={item} />
                   ))}
@@ -452,7 +469,7 @@ export default function ServicesScreen() {
          </div>
          <div className="container">
             <div className="d-flex flex-column flex-lg-row align-items-top">
-               <div className="col-12 ">
+               <div id="lashMenu" className="col-12 ">
                   {data.menuLash.map((item) => (
                      <MenuItem nemuItem={item} />
                   ))}
