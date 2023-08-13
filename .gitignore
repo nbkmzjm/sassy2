@@ -2,7 +2,7 @@
 
 # dependencies
 frontend/node_modules/
-frontend/src/asset/
+# frontend/src/asset/
 frontend/src/config/
 /.pnp
 .pnp.js

@@ -2,18 +2,20 @@ import React, { useContext, useEffect, useReducer, useState } from 'react';
 import { Button, Modal } from 'bootstrap';
 import {
    collection,
+   deleteDoc,
    doc,
    getDoc,
    getDocs,
    onSnapshot,
    setDoc,
 } from 'firebase/firestore';
-import { db } from '../config/firebase';
+import { db, storage } from '../config/firebase';
 import { toast } from 'react-toastify';
 import { Store } from '../Store';
 import { useLocation, useNavigate } from 'react-router-dom';
 import LoadingBox from './LoadingBox';
 import { getError } from './Utils';
+import { deleteObject, ref } from 'firebase/storage';
 
 const reducer = (state, action) => {
    switch (action.type) {
@@ -58,6 +60,28 @@ const MyModal = () => {
       error: '',
    });
    console.log('modal initialize');
+
+   const deleteMedia = async (image) => {
+      const filePath = 'images/' + image.name; // Replace with the actual path of the file
+
+      // Get a reference to the file
+      const fileRef = ref(storage, filePath);
+
+      // Delete the file
+      await deleteObject(fileRef)
+         .then(async () => {
+            console.log('File deleted successfully');
+            try {
+               await deleteDoc(doc(db, 'images', image.id));
+            } catch (error) {
+               toast.error('Cannot delete this media!');
+               console.log(error);
+            }
+         })
+         .catch((error) => {
+            console.error('Error deleting file:', error);
+         });
+   };
    useEffect(() => {
       console.log('modal effect run');
       // const fetchData = async () => {
@@ -146,6 +170,10 @@ const MyModal = () => {
                         <div className="row">
                            {images.map((image, index) => (
                               <div key={index} className="col-6 col-lg-3 mb-4">
+                                 <i
+                                    className="fa-solid fa-rectangle-xmark"
+                                    onClick={() => deleteMedia(image)}
+                                 ></i>
                                  {image.contentType == 'image/jpeg' ? (
                                     <img
                                        src={image.imageUrl}

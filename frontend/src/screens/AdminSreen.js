@@ -10,7 +10,7 @@ export default function AdminSreen() {
    const [imageFile, setImageFile] = useState(null);
    const fileInputRef = useRef(null);
 
-   const handleFileChange = (e) => {
+   const handleFileChange = async (e) => {
       const file = e.target.files[0];
       setImageFile(file);
    };
@@ -25,13 +25,8 @@ export default function AdminSreen() {
    const uploadHandler = async () => {
       console.log('adding images');
       if (!imageFile) return;
-
       const storageRef = ref(storage, 'images/' + imageFile.name);
-
-      // image/jpeg
-      // video/mp4
-
-      uploadBytes(storageRef, imageFile)
+      await uploadBytes(storageRef, imageFile)
          .then((snapshot) => {
             console.log('Image uploaded successfully');
             // You can get the download URL of the uploaded image
@@ -72,12 +67,16 @@ export default function AdminSreen() {
             {console.log('component render...')}
             <input
                type="file"
+               // style={{ display: 'none' }}
                onChange={handleFileChange}
                ref={fileInputRef}
             ></input>
-            <button className="btn btn-primary" onClick={uploadHandler}>
-               Upload
-            </button>
+            {imageFile && (
+               <button className="btn btn-primary" onClick={uploadHandler}>
+                  Upload
+               </button>
+            )}
+
             <button
                className="btn btn-primary ms-2"
                onClick={showImageHandler}

@@ -1,0 +1,297 @@
+.navbar-brand img {
+  height: 4rem;
+}
+
+.navbar {
+  font-size: 1.15 rem;
+  font-weight: 500;
+  letter-spacing: 0.15rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.237);
+  z-index: 1;
+}
+
+.nav-item {
+  padding: 0.5rem;
+}
+
+.nav-link.active,
+.nav-link:hover {
+  color: #7ac4b7 !important;
+}
+
+.nav-link {
+  color: whitesmoke !important;
+}
+
+#carousel {
+  box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.5);
+}
+
+.carousel-inner {
+  max-height: 38rem !important;
+}
+
+.carousel-item-next,
+.carousel-item-prev,
+.carousel-item.active {
+  transition: transform 0.2 ease;
+}
+
+.welcome {
+  font-size: 4rem;
+  font-family: "Tangerine", serif;
+}
+
+.shopName {
+  font-size: 3rem;
+  font-family: "Roboto", serif;
+}
+
+#intro {
+  font-size: 1.1rem;
+}
+
+.services img {
+  width: 250px;
+  height: 250px;
+  margin: 0.5rem;
+}
+
+.services {
+  font-family: "Dancing Script";
+  font-size: 1.5rem;
+  font-weight: 500;
+  background-color: rgb(213, 242, 244);
+}
+.services .price {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 1rem;
+}
+
+.gallery {
+  font-family: "Dancing Script";
+  font-size: 5rem;
+  text-align: center;
+  color: rgb(231, 114, 12);
+}
+
+.serviceScreen h1 {
+  background: #7ac4b7;
+}
+
+.pedicure-label {
+  width: auto; /* Set the width of the div */
+  height: 250px; /* Set the height of the div */
+  background-image: url("../asset/picture/pedicure.webp");
+  background-size: cover; /* Adjust the image size to cover the entire div */
+  background-position: center; /* Center the background image */
+  /* You can add more styles for the div here */
+}
+.pedicure-label p {
+  position: absolute;
+  font-size: 5rem;
+  color: antiquewhite;
+  font-family: "Dancing Script";
+}
+
+.pedicure-label::before,
+.manicure-label::before,
+.wax-label::before,
+.child-label::before,
+.addon-label::before,
+.addition-label::before,
+.lash-label::before,
+.acrylic-label::before {
+  content: "";
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 70%;
+  background-color: rgba(0, 0, 0, 0.3); /* Adjust the alpha value (0.5) to control the darkness */
+  z-index: 1;
+}
+
+.manicure-label {
+  width: auto; /* Set the width of the div */
+  height: 250px; /* Set the height of the div */
+  background-image: url("../asset/picture/manicure.jpg");
+  background-size: cover; /* Adjust the image size to cover the entire div */
+  background-position: bottom; /* Center the background image */
+  /* You can add more styles for the div here */
+}
+.manicure-label p {
+  position: absolute;
+  font-size: 5rem;
+  color: antiquewhite;
+  font-family: "Dancing Script";
+}
+
+.acrylic-label {
+  width: auto; /* Set the width of the div */
+  height: 250px; /* Set the height of the div */
+  background-image: url("../asset/picture/acrylic.jpg");
+  background-size: cover; /* Adjust the image size to cover the entire div */
+  background-position: center; /* Center the background image */
+  /* You can add more styles for the div here */
+}
+.acrylic-label p {
+  position: absolute;
+  font-size: 5rem;
+  color: antiquewhite;
+  font-family: "Dancing Script";
+}
+
+.addon-label {
+  width: auto; /* Set the width of the div */
+  height: 250px; /* Set the height of the div */
+  background-image: url("../asset/picture/menuAddon.jpg");
+  background-size: cover; /* Adjust the image size to cover the entire div */
+  background-position: center; /* Center the background image */
+  /* You can add more styles for the div here */
+}
+.addon-label p {
+  position: absolute;
+  font-size: 5rem;
+  color: antiquewhite;
+  font-family: "Dancing Script";
+}
+
+.addition-label {
+  width: auto; /* Set the width of the div */
+  height: 250px; /* Set the height of the div */
+  background-image: url("../asset/picture/menuAddtion.jpg");
+  background-size: cover; /* Adjust the image size to cover the entire div */
+  background-position: center; /* Center the background image */
+  /* You can add more styles for the div here */
+}
+.addition-label p {
+  position: absolute;
+  font-size: 5rem;
+  color: antiquewhite;
+  font-family: "Dancing Script";
+}
+
+.wax-label {
+  width: auto; /* Set the width of the div */
+  height: 250px; /* Set the height of the div */
+  background-image: url("../asset/picture/waxing.jpg");
+  background-size: cover; /* Adjust the image size to cover the entire div */
+  background-position: center; /* Center the background image */
+  /* You can add more styles for the div here */
+}
+.wax-label p {
+  position: absolute;
+  font-size: 5rem;
+  color: antiquewhite;
+  font-family: "Dancing Script";
+}
+
+.child-label {
+  width: auto; /* Set the width of the div */
+  height: 250px; /* Set the height of the div */
+  background-image: url("../asset/picture/kidnail.jpeg");
+  background-size: cover; /* Adjust the image size to cover the entire div */
+  background-position: center; /* Center the background image */
+  /* You can add more styles for the div here */
+}
+.child-label p {
+  position: absolute;
+  font-size: 5rem;
+  color: antiquewhite;
+  font-family: "Dancing Script";
+}
+
+.lash-label {
+  width: auto; /* Set the width of the div */
+  height: 250px; /* Set the height of the div */
+  background-image: url("../asset/picture/eyelash.webp");
+  background-size: cover; /* Adjust the image size to cover the entire div */
+  background-position-y: 60%; /* Center the background image */
+  /* You can add more styles for the div here */
+}
+.lash-label p {
+  position: absolute;
+  font-size: 5rem;
+  color: antiquewhite;
+  font-family: "Dancing Script";
+}
+
+.pedicure-img {
+  width: 150px; /* Adjust the size of the hexagon */
+  height: 150px; /* Make sure it's a square to maintain aspect ratio */
+  background-color: #ccc; /* Optional: Add a background color */
+  -webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+          clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  margin: 10px; /* Optional: Add margin to create spacing between thumbnails */
+  overflow: hidden;
+}
+
+.pedicure-img img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.service-title .link-no-decoration,
+.service-title span {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-size: 1.3rem;
+  font-weight: 400;
+}
+
+.acrylic-menu {
+  font-size: 1rem !important;
+}
+
+.top-bar {
+  background: #7ac4b7;
+  height: auto;
+  padding: 1rem 0;
+  margin-top: 3rem;
+}
+
+.location-info p {
+  margin: 0rem;
+}
+
+.top-bar a {
+  color: aliceblue;
+  -webkit-text-decoration: None;
+          text-decoration: None;
+  font-size: 1rem;
+}
+
+.link-no-decoration {
+  text-decoration: none;
+  color: black;
+}
+
+.contact-topbar {
+  font-size: 1.5rem;
+}
+.contact-topbar a {
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+.contact-topbar button {
+  font: #7ac4b7;
+}
+.contact-topbar p {
+  padding: 0;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60px; /* You can adjust this height to your preference */
+  background-color: #333; /* Customize the background color */
+  color: #fff; /* Customize the text color */
+  z-index: 999; /* Make sure the navbar appears on top of other content */
+}
+
+p {
+  color: red;
+}

@@ -31,9 +31,12 @@ export default function Image(props) {
       }
    };
    const getImageSrc = () => {
-      console.log('xxxxxxxxxxxxxxxxxxxx', image);
-      if (image) {
-         if (image.contentType == 'image/jpeg') {
+      if (image && typeof image.contentType === 'string') {
+         const contentType = image.contentType.substring(0, 5);
+         console.log(contentType.substring(0, 5));
+         if (contentType === 'image') {
+            console.log('xxxxxxxxxxxxxxxxxxxx', image.contentType);
+
             return (
                <div>
                   <img
@@ -44,7 +47,7 @@ export default function Image(props) {
                   />
                </div>
             );
-         } else if (image.contentType === 'video/mp4') {
+         } else if (contentType === 'video') {
             console.log(image);
             return (
                <div className="video-container">
