@@ -11,6 +11,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import { db } from '../config/firebase';
 import MyModal from './Modal';
 import { Store } from '../Store';
+import VideoPlayer from './VideoPlayer';
 
 export default function Image(props) {
    const { state, dispatch: ctxDispatch } = useContext(Store);
@@ -50,19 +51,20 @@ export default function Image(props) {
          } else if (contentType === 'video') {
             console.log(image);
             return (
-               <div className="video-container">
-                  <video
-                     controls
-                     autoPlay
-                     width="auto"
-                     height="auto"
-                     loop
-                     onClick={imageChangeHandler}
-                  >
-                     <source src={image.imageUrl} type="video/mp4" />
-                     Your browser does not support the video tag.
-                  </video>
-               </div>
+               <VideoPlayer src={image.imageUrl}></VideoPlayer>
+               // <div className="video-container">
+               //    <video
+               //       controls
+               //       autoPlay="true"
+               //       width="auto"
+               //       height="auto"
+               //       loop
+               //       onClick={imageChangeHandler}
+               //    >
+               //       <source src={image.imageUrl} type="video/mp4" />
+               //       Your browser does not support the video tag.
+               //    </video>
+               // </div>
             );
          }
       } else {

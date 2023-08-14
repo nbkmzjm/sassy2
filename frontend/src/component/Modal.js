@@ -174,7 +174,7 @@ const MyModal = () => {
                                     className="fa-solid fa-rectangle-xmark"
                                     onClick={() => deleteMedia(image)}
                                  ></i>
-                                 {image.contentType == 'image/jpeg' ? (
+                                 {image.contentType === 'image/jpeg' ? (
                                     <img
                                        src={image.imageUrl}
                                        className="img-fluid rounded"
@@ -186,7 +186,7 @@ const MyModal = () => {
                                  ) : (
                                     <div className="video-container">
                                        <video
-                                          controls
+                                          autoPlay
                                           width="640"
                                           height="360"
                                           loop
@@ -196,7 +196,7 @@ const MyModal = () => {
                                        >
                                           <source
                                              src={image.imageUrl}
-                                             type="video/mp4"
+                                             // type="video/mp4"+
                                           />
                                           Your browser does not support the
                                           video tag.
