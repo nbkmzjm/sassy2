@@ -1,5 +1,5 @@
 import { useState, React, useContext } from 'react';
-import { auth, signInWithGoogle } from '../config/firebase';
+import { auth, signInWithGoogle } from '../configReact/firebase';
 import { createUserWithEmailAndPassword, signInWithPopup } from 'firebase/auth';
 import { toast } from 'react-toastify';
 import { Store } from '../Store';

@@ -9,7 +9,7 @@ import {
    onSnapshot,
    setDoc,
 } from 'firebase/firestore';
-import { db, storage } from '../config/firebase';
+import { db, storage } from '../configReact/firebase';
 import { toast } from 'react-toastify';
 import { Store } from '../Store';
 import { useLocation, useNavigate } from 'react-router-dom';

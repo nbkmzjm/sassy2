@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 
 import { addDoc, collection } from 'firebase/firestore';
-import { db, storage } from '../config/firebase';
+import { db, storage } from '../configReact/firebase';
 import { toast } from 'react-toastify';
 import { getDownloadURL, ref, uploadBytes } from 'firebase/storage';
 import MyModal from '../component/Modal';
