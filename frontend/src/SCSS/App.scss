@@ -46,7 +46,7 @@ $primary_color: #7ac4b7;
    button {
       position: fixed;
       top: 100px;
-      opacity: 3%;
+      opacity: 10%;
       background: #7ac4b7;
       color: white;
       border: white;
@@ -70,19 +70,19 @@ $primary_color: #7ac4b7;
    font-size: 1.5rem;
 }
 
-.modal-header {
-   &__save {
-      position: fixed;
-      z-index: 5;
-   }
+// .modal-header {
+//    &__save {
+//       position: fixed;
+//       z-index: 5;
+//    }
 
-   &__closex {
-      position: relative;
-      color: red;
-      // right: 10%;
-      z-index: 5;
-   }
-}
+//    &__closex {
+//       position: relative;
+//       color: red;
+//       // right: 10%;
+//       z-index: 5;
+//    }
+// }
 
 .video-container {
    position: relative;
@@ -104,4 +104,29 @@ $primary_color: #7ac4b7;
    -ms-transform: rotate(90deg); /* IE 9 */
    -webkit-transform: rotate(90deg); /* Chrome, Safari, Opera */
    transform: rotate(90deg);
+}
+
+.social-icons {
+   position: fixed;
+   top: 80%;
+   right: 3px;
+   transform: translateY(-50%);
+   display: flex;
+   flex-direction: column;
+   gap: 10px;
+}
+
+.social-icons a {
+   background-color: #333;
+   color: white;
+   padding: 10px;
+   border-radius: 50%;
+   font-size: 20px;
+   text-align: center;
+   text-decoration: none;
+   transition: background-color 0.3s;
+}
+
+.social-icons a:hover {
+   background-color: #007bff;
 }

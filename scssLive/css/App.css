@@ -25,15 +25,21 @@
 
 #carousel {
   box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
 }
 
 .carousel-inner {
-  max-height: 1500px !important;
+  width: auto;
 }
 
-.w-70 {
-  width: 70%;
-  height: auto; /* Keep the aspect ratio intact */
+.img-rounded {
+  border-radius: 10px;
+}
+
+.carousel-image {
+  height: 80vh;
+  width: auto;
 }
 
 .carousel-item-next,
@@ -75,7 +81,7 @@
 
 .gallery {
   font-family: "";
-  font-size: 5rem;
+  font-size: 4rem;
   text-align: center;
   color: rgb(231, 114, 12);
 }
@@ -94,7 +100,7 @@
 }
 .pedicure-label p {
   position: absolute;
-  font-size: 5rem;
+  font-size: 4rem;
   color: antiquewhite;
   font-family: "Dancing Script";
 }
@@ -223,8 +229,8 @@
 }
 
 .pedicure-img {
-  width: 150px; /* Adjust the size of the hexagon */
-  height: 150px; /* Make sure it's a square to maintain aspect ratio */
+  width: auto; /* Adjust the size of the hexagon */
+  height: auto; /* Make sure it's a square to maintain aspect ratio */
   background-color: #ccc; /* Optional: Add a background color */
   -webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
           clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
@@ -242,7 +248,7 @@
 .service-title span {
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   font-size: 1.3rem;
-  font-weight: 400;
+  font-weight: 300;
 }
 
 .acrylic-menu {
@@ -289,7 +295,7 @@
 .signInBtn button {
   position: fixed;
   top: 100px;
-  opacity: 3%;
+  opacity: 10%;
   background: #7ac4b7;
   color: white;
   border: white;
@@ -311,16 +317,6 @@
   font-size: 1.5rem;
 }
 
-.modal-header__save {
-  position: fixed;
-  z-index: 5;
-}
-.modal-header__closex {
-  position: relative;
-  color: red;
-  z-index: 5;
-}
-
 .video-container {
   position: relative;
   width: 100%; /* Set the container width as needed */
@@ -339,4 +335,29 @@
 
 .rotated { /* IE 9 */ /* Chrome, Safari, Opera */
   transform: rotate(90deg);
+}
+
+.social-icons {
+  position: fixed;
+  top: 80%;
+  right: 3px;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.social-icons a {
+  background-color: #333;
+  color: white;
+  padding: 10px;
+  border-radius: 50%;
+  font-size: 20px;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.social-icons a:hover {
+  background-color: #007bff;
 }

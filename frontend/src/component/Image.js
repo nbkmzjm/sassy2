@@ -12,6 +12,8 @@ import { db } from '../configReact/firebase';
 import MyModal from './Modal';
 import { Store } from '../Store';
 import VideoPlayer from './VideoPlayer';
+import AutoPlayVideo from './AutoPlayVideo';
+import { useInView } from 'react-intersection-observer';
 
 export default function Image(props) {
    const { state, dispatch: ctxDispatch } = useContext(Store);
@@ -20,6 +22,7 @@ export default function Image(props) {
    console.log(locationId);
    const [image, setImage] = useState(null);
    const { userInfo } = state;
+   const [ref, inView] = useInView({ triggerOnce: true });
 
    const imageChangeHandler = async () => {
       console.log('image click');
@@ -39,14 +42,14 @@ export default function Image(props) {
             console.log('xxxxxxxxxxxxxxxxxxxx', image.contentType);
 
             return (
-               <div>
-                  <img
-                     src={image.imageUrl}
-                     alt="Select Picture"
-                     className={imgClassName}
-                     onClick={imageChangeHandler}
-                  />
-               </div>
+               <img
+                  src={image.imageUrl}
+                  width={props.width}
+                  height={props.height}
+                  alt="Select Picture"
+                  className={imgClassName}
+                  onClick={imageChangeHandler}
+               />
             );
          } else if (contentType === 'video') {
             console.log(image);
@@ -55,20 +58,58 @@ export default function Image(props) {
                //   showGallery={imageChangeHandler}
                //   src={image.imageUrl}
                // ></VideoPlayer>
+               // <div className="video-player">
+               //    <video
+               //       controls
+               //       muted
+               //       autoPlay="true"
+               //       width={props.width}
+               //       height={props.height}
+               //       loop
+               //       onClick={imageChangeHandler}
+               //    >
+               //       <source src={image.imageUrl} type="video/mp4" />
+               //       Your browser does not support the video tag.
+               //    </video>
+               // </div>
+
+               // <div className="">
+               //    <video
+               //       ref={ref}
+               //       controls
+               //       autoPlay={true}
+               //       width={props.width}
+               //       height={props.height}
+               //       muted={true}
+               //       loop={true}
+               //       onClick={imageChangeHandler}
+               //    >
+               //       <source src={image.imageUrl} type="video/mp4" />
+               //    </video>
+
+               // </div>
+
                <div className="video-player">
                   <video
-                     controls
+                     autoPlay
                      muted
-                     autoPlay="true"
+                     controls
                      width={props.width}
                      height={props.height}
                      loop
+                     playsInline
+                     className={imgClassName}
                      onClick={imageChangeHandler}
                   >
-                     <source src={image.imageUrl} type="video/mp4" />
+                     <source
+                        src={image.imageUrl}
+                        // type="video/mp4"+
+                     />
                      Your browser does not support the video tag.
                   </video>
                </div>
+
+               // <AutoPlayVideo src={image.imageUrl} />
             );
          }
       } else {

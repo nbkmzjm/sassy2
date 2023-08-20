@@ -57,11 +57,11 @@ function Authen() {
          {console.log(userInfo)}
          {userInfo ? (
             <button className="btn btn-primary" onClick={signoutHandle}>
-               SignOut
+               SignOut <br></br>SignOut
             </button>
          ) : (
             <button className="btn btn-primary" onClick={signinHandle}>
-               SignIn
+               SignIn <br></br>SignIn
             </button>
          )}
       </div>

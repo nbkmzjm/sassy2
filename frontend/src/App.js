@@ -32,6 +32,7 @@ import { Store } from './Store';
 import AdminSreen from './screens/AdminSreen';
 import MyModal from './component/Modal';
 import HomeScreenB from './screens/HomeScreenB';
+import SocialIcons from './component/SocialIcons';
 
 function App() {
    const { state } = useContext(Store);
@@ -39,7 +40,7 @@ function App() {
    const [activeLink, setActiveLink] = useState('Home');
    // const navigate = useNavigate();
    const address = '11435 W Buckeye Rd #101, Avondale, AZ';
-
+   const phoneNumber = '623-478-1950';
    const navLinkHandler = (link) => {
       setActiveLink(link);
    };
@@ -104,35 +105,47 @@ function App() {
                            <div
                               style={{
                                  position: 'fixed',
-                                 right: '-4rem',
+                                 top: '100px',
+                                 right: '-2.5rem',
                                  zIndex: '3',
                                  // translateX: '50%',
                               }}
                               className="d-flex justify-content-center flex-column"
                            >
-                              <div className="mt-5 me-1">
+                              <div className="mt-4 me-1 ps-2">
                                  <Link to="/booking" className="">
                                     <button
                                        type="button"
-                                       className="btn btn-dark  btn-lg mb-5 rotated"
+                                       className="btn btn-dark  btn-md mb-5 rotated"
                                     >
-                                       Book Online
+                                       Book Now
                                     </button>
                                  </Link>
                               </div>
-                              <div className="mt-5 me-1 ps--3">
+                              <div className="mt-3 me-3 ps-3">
+                                 <Link to={`tel:${phoneNumber}`} className="">
+                                    <button
+                                       type="button"
+                                       className="btn btn-dark  btn-md mb-5 rotated"
+                                    >
+                                       Call Now
+                                    </button>
+                                 </Link>
+                              </div>
+                              <div className="mt-3 me-1 ps--4">
                                  <Link
                                     to="https://goo.gl/maps/5Gbh7edioygNQaeP7"
                                     className=""
                                  >
                                     <button
                                        type="button"
-                                       className="btn btn-dark  btn-lg mt-3 rotated "
+                                       className="btn btn-dark  btn-md mt-3 rotated "
                                     >
                                        Get Direction
                                     </button>
                                  </Link>
                               </div>
+                              <SocialIcons></SocialIcons>
                            </div>
                         </div>
                      </div>

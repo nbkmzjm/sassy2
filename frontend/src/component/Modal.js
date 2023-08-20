@@ -37,6 +37,29 @@ const MyModal = () => {
       console.log(state);
    };
 
+   // const [viewVideo, setViewVideo] = useState(false);
+   // const [viewImage, setViewImage] = useState(true);
+
+   const [selectedMediaTypes, setSelectedMediaTypes] = useState([
+      'Image',
+      'Video',
+   ]);
+   const mediaTypes = ['Image', 'Video'];
+   const toggleMedia = (selectMediaType) => {
+      if (selectedMediaTypes.includes(selectMediaType)) {
+         setSelectedMediaTypes(
+            selectedMediaTypes.filter((item) => item !== selectMediaType)
+         );
+
+         console.log(mediaTypes, ':::::::::::', selectMediaType);
+      } else {
+         setSelectedMediaTypes([...selectedMediaTypes, selectMediaType]);
+         console.log(mediaTypes, ':::::::::::else', selectMediaType);
+      }
+      // setViewImage(!viewImage);
+      // setViewVideo(false);
+   };
+
    const saveImageChangeHandler = async () => {
       console.log('saving image changes');
       console.log(images);
@@ -60,6 +83,13 @@ const MyModal = () => {
       error: '',
    });
    console.log('modal initialize');
+
+   const imageItems = images.filter(
+      (item) => item.contentType.substring(0, 5) === 'image'
+   );
+   const videoItems = images.filter(
+      (item) => item.contentType.substring(0, 5) === 'video'
+   );
 
    const deleteMedia = async (image) => {
       const filePath = 'images/' + image.name; // Replace with the actual path of the file
@@ -132,12 +162,12 @@ const MyModal = () => {
          aria-hidden="true"
       >
          {console.log('modal render')}
-         <div className="modal-dialog modal-lg">
+         <div className="modal-dialog modal-dialog-scrollable modal-xl">
             <div className="modal-content">
-               <div className="modal-header">
-                  <h5 className="modal-title" id="exampleModal">
+               <div className="bd-highlight modal-header ">
+                  {/* <h5 className="modal-title" id="exampleModal">
                      Modal title
-                  </h5>
+                  </h5> */}
                   {/* <button
                      type="button"
                      className="btn btn-secondary modal-header__closex"
@@ -145,13 +175,28 @@ const MyModal = () => {
                   >
                      Close
                   </button> */}
+                  {mediaTypes.map((item, index) => (
+                     <button
+                        className="btn btn-info mx-1"
+                        key={index}
+                        onClick={() => toggleMedia(item)}
+                        style={{
+                           backgroundColor: selectedMediaTypes.includes(item)
+                              ? 'lightblue'
+                              : 'grey',
+                        }}
+                     >
+                        {item}
+                     </button>
+                  ))}
+
                   <button
                      type="button"
-                     className="btn btn-primary modal-header__save"
+                     className="btn btn-primary ms-auto"
                      onClick={saveImageChangeHandler}
                      data-bs-dismiss="modal"
                   >
-                     Save changes
+                     Save
                   </button>
                   <button
                      type="button"
@@ -168,13 +213,16 @@ const MyModal = () => {
                         toast.error(error)
                      ) : (
                         <div className="row">
-                           {images.map((image, index) => (
-                              <div key={index} className="col-6 col-lg-3 mb-4">
-                                 <i
-                                    className="fa-solid fa-rectangle-xmark"
-                                    onClick={() => deleteMedia(image)}
-                                 ></i>
-                                 {image.contentType === 'image/jpeg' ? (
+                           {selectedMediaTypes.includes('Image') &&
+                              imageItems.map((image, index) => (
+                                 <div
+                                    key={index}
+                                    className="col-6 col-lg-3 mb-4"
+                                 >
+                                    <i
+                                       className="fa-solid fa-rectangle-xmark"
+                                       onClick={() => deleteMedia(image)}
+                                    ></i>
                                     <img
                                        src={image.imageUrl}
                                        className="img-fluid rounded"
@@ -183,28 +231,41 @@ const MyModal = () => {
                                           imageSelectedHandler(image)
                                        }
                                     />
-                                 ) : (
+                                 </div>
+                              ))}
+
+                           {selectedMediaTypes.includes('Video') &&
+                              videoItems.map((video, index) => (
+                                 <div
+                                    key={index}
+                                    className="col-6 col-lg-3 mb-4"
+                                 >
+                                    <i
+                                       className="fa-solid fa-rectangle-xmark"
+                                       onClick={() => deleteMedia(video)}
+                                    ></i>
                                     <div className="video-container">
                                        <video
                                           autoPlay
-                                          width="640"
-                                          height="360"
+                                          muted
+                                          width="400px"
+                                          height="400px"
                                           loop
+                                          playsInline
                                           onClick={() =>
-                                             imageSelectedHandler(image)
+                                             imageSelectedHandler(video)
                                           }
                                        >
                                           <source
-                                             src={image.imageUrl}
+                                             src={video.imageUrl}
                                              // type="video/mp4"+
                                           />
                                           Your browser does not support the
                                           video tag.
                                        </video>
                                     </div>
-                                 )}
-                              </div>
-                           ))}
+                                 </div>
+                              ))}
                         </div>
                      )}
                   </div>

@@ -46,7 +46,7 @@ export default function ServicesScreen() {
                      <Link to="/booking" className="link-no-decoration ">
                         SASSY JELLY SPECIAL PEDI
                      </Link>{' '}
-                     <span>60 min for $80+</span>
+                     <span>$80+</span>
                   </div>
                   Enjoy the wonders of translucent, heated-contained jelly that
                   soothes and softens the skin. It's the ultimate stress
@@ -61,7 +61,7 @@ export default function ServicesScreen() {
                </div>
             </div>
             <div className="row align-items-center pb-3 mb-3 border-bottom border-info-subtle">
-               <div className="col-1"></div>
+               {/* <div className="col-1"></div> */}
                <div className="col-3">
                   <Image
                      locationId="pediMenu2"
@@ -73,7 +73,7 @@ export default function ServicesScreen() {
                      <Link to="/booking" className="link-no-decoration ">
                         SASSY "VOLCANIC" COLLAGEN PEDI
                      </Link>{' '}
-                     <span>75 min for $75+</span>
+                     <span>$75+</span>
                   </div>
                   Experience the luxurious wonders of our collagen-packed foot
                   pedicure for a refreshing feeling to the feet. Expect to
@@ -98,7 +98,7 @@ export default function ServicesScreen() {
                      <Link to="/booking" className="link-no-decoration ">
                         SASSY DELUXE SPA PEDI
                      </Link>{' '}
-                     <span>65 min for $65+</span>
+                     <span>$65+</span>
                   </div>
                   Our deluxe pedicure assisted with the BCL Spa 4-Step System.
                   The 4-Step pedicure system thoroughly moisturizes and
@@ -111,7 +111,7 @@ export default function ServicesScreen() {
                </div>
             </div>
             <div className="row align-items-center pb-3 mb-3 border-bottom border-info-subtle">
-               <div className="col-1"></div>
+               {/* <div className="col-1"></div> */}
                <div className="col-3">
                   <Image
                      locationId="pediMenu4"
@@ -123,7 +123,7 @@ export default function ServicesScreen() {
                      <Link to="/booking" className="link-no-decoration ">
                         SASSY GEL PEDI
                      </Link>{' '}
-                     <span>55 min for $55+</span>
+                     <span>$55+</span>
                   </div>
                   An extension of our "Sassy Deluxe Spa Pedicure. This service
                   consists of a citrusy sugar scrub, and callus treatment
@@ -145,7 +145,7 @@ export default function ServicesScreen() {
                      <Link to="/booking" className="link-no-decoration ">
                         SASSY SIGNATURE SPA PEDI
                      </Link>{' '}
-                     <span>40 min for $45+</span>
+                     <span>$45+</span>
                   </div>
                   Our signature pedicure relieves stress and rejuvenates worn
                   feet. This service starts with an exfoliating sugar scrub, and
@@ -156,7 +156,7 @@ export default function ServicesScreen() {
                </div>
             </div>
             <div className="row align-items-center pb-3 mb-3 border-bottom border-info-subtle">
-               <div className="col-1"></div>
+               {/* <div className="col-1"></div> */}
 
                <div className="col-3">
                   <Image
@@ -169,7 +169,7 @@ export default function ServicesScreen() {
                      <Link to="/booking" className="link-no-decoration ">
                         SASSY HOT STONE SPA PEDI
                      </Link>{' '}
-                     <span>30 min for $35+</span>
+                     <span>$35+</span>
                   </div>
                   Treat your feet with our soothing and relaxing hot stone
                   treatment. This service consists of extoliating sugar scrub,
@@ -190,7 +190,7 @@ export default function ServicesScreen() {
                      <Link to="/booking" className="link-no-decoration ">
                         SASSY HOT STONE SPA PEDI
                      </Link>{' '}
-                     <span>35 min for $38+</span>
+                     <span>$38+</span>
                   </div>
                   Treat your feet with our soothing and relaxing hot stone
                   treatment. This service consists of extoliating sugar scrub,
@@ -200,7 +200,7 @@ export default function ServicesScreen() {
                </div>
             </div>
             <div className="row align-items-center pb-3 mb-3 border-bottom border-info-subtle">
-               <div className="col-1"></div>
+               {/* <div className="col-1"></div> */}
 
                <div className="col-3">
                   <Image
@@ -213,7 +213,7 @@ export default function ServicesScreen() {
                      <Link to="/booking" className="link-no-decoration ">
                         SASSY SPA PEDI
                      </Link>{' '}
-                     <span>27 min for $30+</span>
+                     <span>$30+</span>
                   </div>
                   Rejuvenate your feet with our relieving treatment. This
                   service includes nail trimming. Filing, shaping, buffing,
@@ -243,7 +243,7 @@ export default function ServicesScreen() {
                      <Link to="/booking" className="link-no-decoration ">
                         CLASSIC MANICURE
                      </Link>{' '}
-                     <span>22 min for $22+</span>
+                     <span>$22+</span>
                   </div>
                   +Refreshing Hand Soak <br />
                   +Relaxing Hand Massage Polish <br />
@@ -256,7 +256,7 @@ export default function ServicesScreen() {
                </div>
             </div>
             <div className="row align-items-center pb-3 mb-3 border-bottom border-info-subtle">
-               <div className="col-1"></div>
+               {/* <div className="col-1"></div> */}
                <div className="col-3">
                   <Image
                      locationId="mediMenu2"
@@ -268,7 +268,7 @@ export default function ServicesScreen() {
                      <Link to="/booking" className="link-no-decoration ">
                         SASSY DELUXE MANICURE
                      </Link>{' '}
-                     <span>27 min for $30+</span>
+                     <span>$30+</span>
                   </div>
                   +Classic Manicure Plus <br />
                   +Sugar Scrub <br />
@@ -292,7 +292,7 @@ export default function ServicesScreen() {
                      <Link to="/booking" className="link-no-decoration ">
                         GEL MANICURE
                      </Link>{' '}
-                     <span>30 min for $35+</span>
+                     <span>$35+</span>
                   </div>
                   +Classic Manicure
                   <br />
@@ -317,49 +317,49 @@ export default function ServicesScreen() {
                      <Link to="/booking" className="link-no-decoration ">
                         White Tip Fill In
                      </Link>{' '}
-                     <span>$50 (30 min.)</span>
+                     <span>$50 </span>
                   </div>
                   <div className="d-flex justify-content-between service-title pb-2 mb-2 border-bottom border-info-subtle">
                      <Link to="/booking" className="link-no-decoration ">
                         White Tip Full Set
                      </Link>{' '}
-                     <span>$55 (30 mins.)</span>
+                     <span>$55</span>
                   </div>
                   <div className="d-flex justify-content-between service-title pb-2 mb-2 border-bottom border-info-subtle">
                      <Link to="/booking" className="link-no-decoration ">
                         Fill In Gel $40
                      </Link>{' '}
-                     <span>$40 (30 mins.)</span>
+                     <span>$40</span>
                   </div>
                   <div className="d-flex justify-content-between service-title pb-2 mb-2 border-bottom border-info-subtle">
                      <Link to="/booking" className="link-no-decoration ">
                         Full Set Gel
                      </Link>{' '}
-                     <span>$50 (45 mins.)</span>
+                     <span>$50</span>
                   </div>
                   <div className="d-flex justify-content-between service-title pb-2 mb-2 border-bottom border-info-subtle">
                      <Link to="/booking" className="link-no-decoration ">
                         Pink/Gel Powder Fill In
                      </Link>{' '}
-                     <span>$45 (30 mins.)</span>
+                     <span>$45</span>
                   </div>
                   <div className="d-flex justify-content-between service-title pb-2 mb-2 border-bottom border-info-subtle">
                      <Link to="/booking" className="link-no-decoration ">
                         Pink & White Powder Fill In
                      </Link>{' '}
-                     <span> $55 (45 mins.)</span>
+                     <span> $55</span>
                   </div>
                   <div className="d-flex justify-content-between service-title pb-2 mb-2 border-bottom border-info-subtle">
                      <Link to="/booking" className="link-no-decoration ">
                         Ombre Fill In
                      </Link>{' '}
-                     <span>$55 (45 mins.)</span>
+                     <span>$55</span>
                   </div>
                   <div className="d-flex justify-content-between service-title pb-2 mb-2 border-bottom border-info-subtle">
                      <Link to="/booking" className="link-no-decoration ">
                         Ombre Full Set
                      </Link>{' '}
-                     <span> $65 (45 mins.)</span>
+                     <span> $65</span>
                   </div>
                </div>
                <div className="col-12 col-lg-6">
@@ -367,37 +367,37 @@ export default function ServicesScreen() {
                      <Link to="/booking" className="link-no-decoration ">
                         Acrylic Full Set Toes w/ Pedi
                      </Link>{' '}
-                     <span>$45 (30 mins.)</span>
+                     <span>$45</span>
                   </div>
                   <div className="d-flex justify-content-between service-title pb-2 mb-2 border-bottom border-info-subtle">
                      <Link to="/booking" className="link-no-decoration ">
                         Acrylic Full Set Toes w/o Pedi
                      </Link>{' '}
-                     <span>$55 (30 mins.)</span>
+                     <span>$55</span>
                   </div>
                   <div className="d-flex justify-content-between service-title pb-2 mb-2 border-bottom border-info-subtle">
                      <Link to="/booking" className="link-no-decoration ">
                         SNS Dip Powder Fullset
                      </Link>{' '}
-                     <span>$45 (40 mins.)</span>
+                     <span>$45</span>
                   </div>
                   <div className="d-flex justify-content-between service-title pb-2 mb-2 border-bottom border-info-subtle">
                      <Link to="/booking" className="link-no-decoration ">
                         SNS Dipping Powder FS Fill
                      </Link>{' '}
-                     <span>$49 (40 mins.)</span>
+                     <span>$49</span>
                   </div>
                   <div className="d-flex justify-content-between service-title pb-2 mb-2 border-bottom border-info-subtle">
                      <Link to="/booking" className="link-no-decoration ">
                         SNS Dip Powder Fill
                      </Link>{' '}
-                     <span>$48 (40 mins.)</span>
+                     <span>$48</span>
                   </div>
                   <div className="d-flex justify-content-between service-title pb-2 mb-2 border-bottom border-info-subtle">
                      <Link to="/booking" className="link-no-decoration ">
                         SNS DippingPowder FullSet (FS)
                      </Link>{' '}
-                     <span>$52 (40 mins.)</span>
+                     <span>$52</span>
                   </div>
                </div>
             </div>

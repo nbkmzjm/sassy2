@@ -14,7 +14,7 @@ $primary_color: #7ac4b7;
 
    p {
       position: absolute;
-      font-size: 5rem;
+      font-size: 4rem;
       color: antiquewhite;
       font-family: 'Dancing Script';
    }
@@ -150,8 +150,8 @@ $primary_color: #7ac4b7;
    }
 }
 .pedicure-img {
-   width: 150px; /* Adjust the size of the hexagon */
-   height: 150px; /* Make sure it's a square to maintain aspect ratio */
+   width: auto; /* Adjust the size of the hexagon */
+   height: auto; /* Make sure it's a square to maintain aspect ratio */
    background-color: #ccc; /* Optional: Add a background color */
    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
    //    polygon(50% 0%, 85% 10%, 100% 50%, 85% 90%, 50% 100%, 15% 90%, 0% 50%, 15% 10%)
@@ -170,7 +170,7 @@ $primary_color: #7ac4b7;
    span {
       font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
       font-size: 1.3rem;
-      font-weight: 400;
+      font-weight: 300;
    }
 }
 
