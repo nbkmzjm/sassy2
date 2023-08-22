@@ -1,11 +1,21 @@
 #carousel {
-   box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.5);
-   display: flex;
-   justify-content: center;
+  box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
 .carousel-inner {
-   width: auto;
-   // background-color: green;
+  width: 100vw;
+  height: 50vh;
+  // background-color: green;
+}
+
+@media (min-width: 768px) {
+  .carousel-inner {
+    width: 1200px; /* Adjust max-width for larger screens */
+    height: 80vh;
+  }
 }
 
 // .w-75 {
@@ -14,60 +24,60 @@
 // }
 
 .img-rounded {
-   border-radius: 10px;
+  border-radius: 10px;
 }
 
 .carousel-item {
-   // align-items: center;
-   // justify-content: center;
-   // width: auto;
+  // justify-content: center;
+  // width: auto;
+  // height: auto;
 }
 
 .carousel-image {
-   height: 80vh;
-   width: auto;
+  height: 100%;
+  width: 100%;
 }
 
 .carousel-item-next,
 .carousel-item-prev,
 .carousel-item.active {
-   transition: transform 0.2 ease;
+  transition: transform 0.2 ease;
 }
 
 .welcome {
-   font-size: 4rem;
-   font-family: 'Tangerine', serif;
+  font-size: 4rem;
+  font-family: 'Tangerine', serif;
 }
 .shopName {
-   font-size: 3rem;
-   font-family: 'Roboto', serif;
+  font-size: 3rem;
+  font-family: 'Roboto', serif;
 }
 
 #intro {
-   font-size: 1.1rem;
+  font-size: 1.1rem;
 }
 
 .services img {
-   width: 250px;
-   height: 250px;
-   margin: 0.5rem;
+  width: 250px;
+  height: 250px;
+  margin: 0.5rem;
 }
 
 .services {
-   font-family: 'Dancing Script';
-   font-size: 1.5rem;
-   font-weight: 500;
-   background-color: rgb(213, 242, 244);
+  font-family: 'Dancing Script';
+  font-size: 1.5rem;
+  font-weight: 500;
+  background-color: rgb(213, 242, 244);
 
-   .price {
-      font-family: 'Times New Roman', Times, serif;
-      font-size: 1rem;
-   }
+  .price {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1rem;
+  }
 }
 
 .gallery {
-   font-family: '';
-   font-size: 4rem;
-   text-align: center;
-   color: rgb(231, 114, 12);
+  font-family: '';
+  font-size: 4rem;
+  text-align: center;
+  color: rgb(231, 114, 12);
 }
