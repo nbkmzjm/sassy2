@@ -11,11 +11,8 @@
   // background-color: green;
 }
 
-@media (min-width: 768px) {
-  .carousel-inner {
-    width: 1200px; /* Adjust max-width for larger screens */
-    height: 80vh;
-  }
+.gallery-cont {
+  width: 100%;
 }
 
 // .w-75 {
@@ -80,4 +77,13 @@
   font-size: 4rem;
   text-align: center;
   color: rgb(231, 114, 12);
+}
+@media (min-width: 768px) {
+  .carousel-inner {
+    width: 1200px; /* Adjust max-width for larger screens */
+    height: 80vh;
+  }
+  .gallery-cont {
+    width: 1200px;
+  }
 }
