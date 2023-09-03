@@ -24,13 +24,13 @@ const SocialIcons = () => {
          >
             <i className="fab fa-google"></i>
          </a>
-         <a
+         {/* <a
             href="https://www.yelp.com/biz/sassy-nails-and-spa-mc85-avondale"
             target="_blank"
             rel="noopener noreferrer"
          >
             <i className="fab fa-yelp"></i>
-         </a>
+         </a> */}
       </div>
    );
 };

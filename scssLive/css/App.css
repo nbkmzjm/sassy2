@@ -27,10 +27,16 @@
   box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.5);
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 .carousel-inner {
-  width: auto;
+  width: 100vw;
+  height: 50vh;
+}
+
+.gallery-cont {
+  width: 100%;
 }
 
 .img-rounded {
@@ -38,8 +44,8 @@
 }
 
 .carousel-image {
-  height: 80vh;
-  width: auto;
+  height: 100%;
+  width: 100%;
 }
 
 .carousel-item-next,
@@ -86,6 +92,15 @@
   color: rgb(231, 114, 12);
 }
 
+@media (min-width: 768px) {
+  .carousel-inner {
+    width: 1200px; /* Adjust max-width for larger screens */
+    height: 80vh;
+  }
+  .gallery-cont {
+    width: 1200px;
+  }
+}
 .serviceScreen h1 {
   background: #7ac4b7;
 }
@@ -262,6 +277,9 @@
   margin-top: 3rem;
 }
 
+.location-info {
+  max-width: 1200px;
+}
 .location-info p {
   margin: 0rem;
 }
@@ -339,6 +357,7 @@
 
 .social-icons {
   position: fixed;
+  opacity: 100%;
   top: 80%;
   right: 3px;
   transform: translateY(-50%);

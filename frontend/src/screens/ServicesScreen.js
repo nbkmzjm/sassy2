@@ -56,8 +56,10 @@ export default function ServicesScreen() {
                   complemented with a foot mask, hot towel wrap, and warm
                   paraffin wax wrap for the full experience of relaxation. This
                   treatment will conclude with a soothing hot stone massage
-                  utilizing lotion and oil. Scents: Milk & Honey, Lavender,
-                  Sweet Citrus, Tea Tree Peppermint
+                  utilizing lotion and oil. <br></br>
+                  <strong>
+                     Scents: Rosemary, Ylang Ylang, Champagne Hour, Yes To Rose.
+                  </strong>
                </div>
             </div>
             <div className="row align-items-center pb-3 mb-3 border-bottom border-info-subtle">
@@ -82,8 +84,11 @@ export default function ServicesScreen() {
                   Pedicure consists of 'igneous spa crystals, a citrusy sugar
                   scrub followed by a callus treatment with paraffin wax. This
                   treatment will conclude with a soothing hot stone massage
-                  utilizing lotion and oil. Scents: Honey Pearl, Romance,
-                  Tropical Citrus, & Green Tea + Aloe Vera
+                  utilizing lotion and oil.<br></br>
+                  <strong>
+                     Scents: Honey Pearl, Romance, Tropical Citrus, & Green Tea
+                     + Aloe Vera
+                  </strong>
                </div>
             </div>
             <div className="row align-items-center pb-3 mb-3 border-bottom border-info-subtle">
@@ -105,9 +110,11 @@ export default function ServicesScreen() {
                   refreshes the feet while healing its damages. Indulge your
                   feet in the pragmatic footbath and relax with a citrusy sugar
                   scrub, hot towel wrap, and warm paraffin wax wrap, tollowed by
-                  a hot stone massage utilizing lotion and 01. Scents:
-                  Grapefruit, Milk + Honey, Mango + Mandarin, Lemongrass + Green
-                  Lea
+                  a hot stone massage utilizing lotion and 01.<br></br>{' '}
+                  <strong>
+                     Scents: Grapefruit, Milk + Honey, Mango + Mandarin,
+                     Lemongrass + Green Lea
+                  </strong>
                </div>
             </div>
             <div className="row align-items-center pb-3 mb-3 border-bottom border-info-subtle">
@@ -129,8 +136,8 @@ export default function ServicesScreen() {
                   consists of a citrusy sugar scrub, and callus treatment
                   followed by a hot stone massage utilizing lotion and oil.
                   Customers will also have the option to select from a variety
-                  of gel colors for their toes. Scents: Orange, Lemon, Jasmine,
-                  & Lemongrass
+                  of gel colors for their toes. <br></br>
+                  <strong>Scents: Orange, Lemon, Jasmine, & Lemongrass</strong>
                </div>
             </div>
             <div className="row align-items-center pb-3 mb-3 border-bottom border-info-subtle">
@@ -152,7 +159,8 @@ export default function ServicesScreen() {
                   callus treatment followed by a hot stone massage utilizing
                   lotion, oil, and cooling gel. Customers will have the option
                   to select from a variety of colors concluding their pedicure.
-                  Scents: Orange, Lemon, Jasmine, & Lemongrass
+                  <br></br>
+                  <strong>Scents: Orange, Lemon, Jasmine, & Lemongrass</strong>
                </div>
             </div>
             <div className="row align-items-center pb-3 mb-3 border-bottom border-info-subtle">
@@ -161,27 +169,6 @@ export default function ServicesScreen() {
                <div className="col-3">
                   <Image
                      locationId="pediMenu6"
-                     imgClassName="img-fluid mt-5 img-thumbnail pedicure-img"
-                  ></Image>
-               </div>
-               <div className="col-8">
-                  <div className="d-flex justify-content-between service-title">
-                     <Link to="/booking" className="link-no-decoration ">
-                        SASSY HOT STONE SPA PEDI
-                     </Link>{' '}
-                     <span>$35+</span>
-                  </div>
-                  Treat your feet with our soothing and relaxing hot stone
-                  treatment. This service consists of extoliating sugar scrub,
-                  followed by a hot stone massage utilizing lotion, oil, and
-                  cooling gel. Customers will have the option to select from a
-                  variety of colors concluding their pedicure.
-               </div>
-            </div>
-            <div className="row align-items-center pb-3 mb-3 border-bottom border-info-subtle">
-               <div className="col-3">
-                  <Image
-                     locationId="pediMenu7"
                      imgClassName="img-fluid mt-5 img-thumbnail pedicure-img"
                   ></Image>
                </div>
@@ -199,12 +186,13 @@ export default function ServicesScreen() {
                   variety of colors concluding their pedicure.
                </div>
             </div>
+
             <div className="row align-items-center pb-3 mb-3 border-bottom border-info-subtle">
                {/* <div className="col-1"></div> */}
 
                <div className="col-3">
                   <Image
-                     locationId="pediMenu8"
+                     locationId="pediMenu7"
                      imgClassName="img-fluid mt-5 img-thumbnail pedicure-img"
                   ></Image>
                </div>
@@ -245,9 +233,11 @@ export default function ServicesScreen() {
                      </Link>{' '}
                      <span>$22+</span>
                   </div>
-                  +Refreshing Hand Soak <br />
-                  +Relaxing Hand Massage Polish <br />
-                  +Expert Trimming, Shaping & Cuticle Detail <br />
+                  <strong>
+                     +Refreshing Hand Soak <br />
+                     +Relaxing Hand Massage Polish <br />
+                     +Expert Trimming, Shaping & Cuticle Detail <br />
+                  </strong>
                   Our signature classic manicure involves nail filing, shaping
                   and buffing cuticle work and polish in a color of your choice.
                   The treatment is then finished with an application of
@@ -270,14 +260,17 @@ export default function ServicesScreen() {
                      </Link>{' '}
                      <span>$30+</span>
                   </div>
-                  +Classic Manicure Plus <br />
-                  +Sugar Scrub <br />
-                  +Cucumber Cream Hand Massage <br />A relaxing manicure that
-                  leaves your skin soft and smooth. Hand soak, nails are cut and
-                  filed, cuticles soaked and tidied, exfoliation sugar scrub and
-                  hydrating mask, cucumber cream hand massage. Finishing oil
-                  with a divine hand and arm massage and your choice of colored
-                  polish
+                  <strong>
+                     {' '}
+                     +Classic Manicure Plus <br />
+                     +Sugar Scrub <br />
+                     +Cucumber Cream Hand Massage <br />
+                  </strong>
+                  A relaxing manicure that leaves your skin soft and smooth.
+                  Hand soak, nails are cut and filed, cuticles soaked and
+                  tidied, exfoliation sugar scrub and hydrating mask, cucumber
+                  cream hand massage. Finishing oil with a divine hand and arm
+                  massage and your choice of colored polish
                </div>
             </div>
             <div className="row align-items-center pb-3 mb-3 border-bottom border-info-subtle">
@@ -294,10 +287,12 @@ export default function ServicesScreen() {
                      </Link>{' '}
                      <span>$35+</span>
                   </div>
-                  +Classic Manicure
-                  <br />
-                  +Gel Polish
-                  <br />
+                  <strong>
+                     {' '}
+                     +Classic Manicure
+                     <br /> +Gel Polish
+                     <br />
+                  </strong>
                   Classic Manicure PLUS Gel Polish are used for the increasingly
                   popular
                </div>
@@ -317,7 +312,7 @@ export default function ServicesScreen() {
                      <Link to="/booking" className="link-no-decoration ">
                         White Tip Fill In
                      </Link>{' '}
-                     <span>$50 </span>
+                     <span>$40 </span>
                   </div>
                   <div className="d-flex justify-content-between service-title pb-2 mb-2 border-bottom border-info-subtle">
                      <Link to="/booking" className="link-no-decoration ">
@@ -327,7 +322,19 @@ export default function ServicesScreen() {
                   </div>
                   <div className="d-flex justify-content-between service-title pb-2 mb-2 border-bottom border-info-subtle">
                      <Link to="/booking" className="link-no-decoration ">
-                        Fill In Gel $40
+                        Pink/Gel Powder Fill In
+                     </Link>{' '}
+                     <span>$45</span>
+                  </div>
+                  <div className="d-flex justify-content-between service-title pb-2 mb-2 border-bottom border-info-subtle">
+                     <Link to="/booking" className="link-no-decoration ">
+                        Pink/Gel Powder Full Set
+                     </Link>{' '}
+                     <span>$55+</span>
+                  </div>
+                  <div className="d-flex justify-content-between service-title pb-2 mb-2 border-bottom border-info-subtle">
+                     <Link to="/booking" className="link-no-decoration ">
+                        Fill In Gel
                      </Link>{' '}
                      <span>$40</span>
                   </div>
@@ -335,19 +342,34 @@ export default function ServicesScreen() {
                      <Link to="/booking" className="link-no-decoration ">
                         Full Set Gel
                      </Link>{' '}
-                     <span>$50</span>
+                     <span>$50+</span>
+                  </div>
+
+                  <div className="d-flex justify-content-between service-title pb-2 mb-2 border-bottom border-info-subtle">
+                     <Link to="/booking" className="link-no-decoration ">
+                        SNS Dip Powder
+                     </Link>{' '}
+                     <span>$45+</span>
                   </div>
                   <div className="d-flex justify-content-between service-title pb-2 mb-2 border-bottom border-info-subtle">
                      <Link to="/booking" className="link-no-decoration ">
-                        Pink/Gel Powder Fill In
+                        SNS Dipping Powder FS Fullset{' '}
                      </Link>{' '}
-                     <span>$45</span>
+                     <span>$55+</span>
                   </div>
+               </div>
+               <div className="col-12 col-lg-6">
                   <div className="d-flex justify-content-between service-title pb-2 mb-2 border-bottom border-info-subtle">
                      <Link to="/booking" className="link-no-decoration ">
                         Pink & White Powder Fill In
                      </Link>{' '}
-                     <span> $55</span>
+                     <span> $50</span>
+                  </div>
+                  <div className="d-flex justify-content-between service-title pb-2 mb-2 border-bottom border-info-subtle">
+                     <Link to="/booking" className="link-no-decoration ">
+                        Pink & White Powder Full Set
+                     </Link>{' '}
+                     <span> $65+</span>
                   </div>
                   <div className="d-flex justify-content-between service-title pb-2 mb-2 border-bottom border-info-subtle">
                      <Link to="/booking" className="link-no-decoration ">
@@ -361,8 +383,7 @@ export default function ServicesScreen() {
                      </Link>{' '}
                      <span> $65</span>
                   </div>
-               </div>
-               <div className="col-12 col-lg-6">
+
                   <div className="d-flex justify-content-between service-title pb-2 mb-2 border-bottom border-info-subtle">
                      <Link to="/booking" className="link-no-decoration ">
                         Acrylic Full Set Toes w/ Pedi
@@ -373,31 +394,25 @@ export default function ServicesScreen() {
                      <Link to="/booking" className="link-no-decoration ">
                         Acrylic Full Set Toes w/o Pedi
                      </Link>{' '}
-                     <span>$55</span>
+                     <span>$60</span>
                   </div>
                   <div className="d-flex justify-content-between service-title pb-2 mb-2 border-bottom border-info-subtle">
                      <Link to="/booking" className="link-no-decoration ">
-                        SNS Dip Powder Fullset
+                        Back Fill
                      </Link>{' '}
-                     <span>$45</span>
+                     <span>$55+</span>
                   </div>
                   <div className="d-flex justify-content-between service-title pb-2 mb-2 border-bottom border-info-subtle">
                      <Link to="/booking" className="link-no-decoration ">
-                        SNS Dipping Powder FS Fill
+                        Gel X Fill In
                      </Link>{' '}
-                     <span>$49</span>
+                     <span>$60</span>
                   </div>
                   <div className="d-flex justify-content-between service-title pb-2 mb-2 border-bottom border-info-subtle">
                      <Link to="/booking" className="link-no-decoration ">
-                        SNS Dip Powder Fill
+                        Gel X Full Set
                      </Link>{' '}
-                     <span>$48</span>
-                  </div>
-                  <div className="d-flex justify-content-between service-title pb-2 mb-2 border-bottom border-info-subtle">
-                     <Link to="/booking" className="link-no-decoration ">
-                        SNS DippingPowder FullSet (FS)
-                     </Link>{' '}
-                     <span>$52</span>
+                     <span>$75</span>
                   </div>
                </div>
             </div>
