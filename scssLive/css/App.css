@@ -358,9 +358,8 @@
 .social-icons {
   position: fixed;
   opacity: 100%;
-  top: 80%;
-  right: 3px;
-  transform: translateY(-50%);
+  top: 60%;
+  left: 3px;
   display: flex;
   flex-direction: column;
   gap: 10px;

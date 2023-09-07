@@ -135,3 +135,8 @@ export default App;
          </div>
       ))}
 </div>;
+
+
+"devDependencies": {
+   "@babel/plugin-proposal-private-property-in-object": "1.0.0"
+},

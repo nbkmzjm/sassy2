@@ -34,6 +34,7 @@ import AdminSreen from './screens/AdminSreen';
 import MyModal from './component/Modal';
 import HomeScreenB from './screens/HomeScreenB';
 import SocialIcons from './component/SocialIcons';
+import ReactGA from 'react-ga4';
 
 function App() {
    const { state } = useContext(Store);
@@ -45,7 +46,7 @@ function App() {
    const navLinkHandler = (link) => {
       setActiveLink(link);
    };
-
+   ReactGA.initialize('G-S9CJMP9WEP');
    return (
       <BrowserRouter>
          <div className="App">
@@ -147,6 +148,28 @@ function App() {
                                     </button>
                                  </Link>
                               </div>
+                              <div className="mt-4 me-3 ps-3">
+                                 <Link to="/services" className="">
+                                    <button
+                                       type="button"
+                                       className="btn btn-dark  btn-md mt-5 rotated "
+                                    >
+                                       Services
+                                    </button>
+                                 </Link>
+                              </div>
+                           </div>
+                           <div
+                              style={{
+                                 position: 'fixed',
+                                 bottom: '100px',
+                                 left: '2.5rem',
+                                 zIndex: '3',
+                                 opacity: '70%',
+                                 // translateX: '50%',
+                              }}
+                              className="d-flex justify-content-center flex-column floating-buttons"
+                           >
                               <SocialIcons></SocialIcons>
                            </div>
                         </div>
