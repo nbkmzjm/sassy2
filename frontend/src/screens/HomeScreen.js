@@ -36,16 +36,11 @@ export default function HomeScreen() {
       }
    };
 
-   logEvent(analytics, 'goal_completion', {
-      name: 'lever_puzzle',
-      page_location: window.location.href,
-      page_title: 'My Page Title',
-   });
-
-   logEvent(analytics, 'select_content', {
-      content_type: 'image',
-      content_id: 'P12453',
-   });
+   //  logEvent(analytics, 'goal_completion', {
+   //     name: 'lever_puzzle',
+   //     page_location: window.location.href,
+   //     page_title: 'My Page Title',
+   //  });
 
    console.log('window.location.pathname:' + window.location.pathname);
    console.log('window.location.search:' + window.location.search);

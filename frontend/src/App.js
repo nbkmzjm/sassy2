@@ -23,7 +23,7 @@ import Navbar from 'react-bootstrap/Navbar';
 // import './asset/picture/sassyLogo/jpeg';
 import './SCSS/App.scss';
 import Authen from './component/Authen.js';
-import { auth } from './configReact/firebase';
+import { analytics, auth } from './configReact/firebase';
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer } from 'react-toastify';
 import ServicesScreen from './screens/ServicesScreen';
@@ -35,6 +35,7 @@ import MyModal from './component/Modal';
 import HomeScreenB from './screens/HomeScreenB';
 import SocialIcons from './component/SocialIcons';
 import ReactGA from 'react-ga4';
+import { logEvent } from 'firebase/analytics';
 
 function App() {
    const { state } = useContext(Store);
@@ -46,7 +47,32 @@ function App() {
    const navLinkHandler = (link) => {
       setActiveLink(link);
    };
-   ReactGA.initialize('G-S9CJMP9WEP');
+   console.log('process.env.NODE_ENV:', process.env.NODE_ENV);
+   if (process.env.NODE_ENV === 'production') {
+      ReactGA.initialize('G-S9CJMP9WEP');
+      console.log('Initialize ReactGA...');
+   }
+
+   const getDirectionHandler = () => {
+      console.log('getDirectionHandler');
+      logEvent(analytics, 'Get Direction Button', {
+         name: 'Get Direction',
+         page_location: window.location.href,
+      });
+   };
+   const callNowHandler = () => {
+      console.log('Call Now Handler');
+      logEvent(analytics, 'Get Direction Button', {
+         name: 'Call Now',
+      });
+   };
+   const mapClickHandler = () => {
+      console.log('Map Click Handler');
+      logEvent(analytics, 'Get direction from map click', {
+         name: 'Map Click',
+      });
+   };
+
    return (
       <BrowserRouter>
          <div className="App">
@@ -66,6 +92,8 @@ function App() {
                               // style="border:0;"
                               // allowfullscreen=""
                               loading="lazy"
+                              // onClick={mapClickHandler}
+
                               // referrerpolicy="no-referrer-when-downgrade"
                            ></iframe>
                            {/* <iframe
@@ -130,6 +158,7 @@ function App() {
                                     <button
                                        type="button"
                                        className="btn btn-dark  btn-md mb-5 rotated"
+                                       onClick={callNowHandler}
                                     >
                                        Call Now
                                     </button>
@@ -143,6 +172,7 @@ function App() {
                                     <button
                                        type="button"
                                        className="btn btn-dark  btn-md mt-3 rotated "
+                                       onClick={getDirectionHandler}
                                     >
                                        Get Direction
                                     </button>
