@@ -47,29 +47,25 @@ function App() {
    const navLinkHandler = (link) => {
       setActiveLink(link);
    };
-   console.log('process.env.NODE_ENV:', process.env.NODE_ENV);
-   if (process.env.NODE_ENV === 'production') {
-      ReactGA.initialize('G-S9CJMP9WEP');
-      console.log('Initialize ReactGA...');
-   }
 
    const getDirectionHandler = () => {
       console.log('getDirectionHandler');
       logEvent(analytics, 'Get Direction Button', {
-         name: 'Get Direction',
          page_location: window.location.href,
       });
    };
    const callNowHandler = () => {
       console.log('Call Now Handler');
-      logEvent(analytics, 'Get Direction Button', {
-         name: 'Call Now',
-      });
+      if (analytics) {
+         logEvent(analytics, 'Call Now Button', {
+            page_location: window.location.href,
+         });
+      }
    };
    const mapClickHandler = () => {
       console.log('Map Click Handler');
       logEvent(analytics, 'Get direction from map click', {
-         name: 'Map Click',
+         page_location: window.location.href,
       });
    };
 
