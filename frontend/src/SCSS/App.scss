@@ -8,7 +8,7 @@ $primary_color: #7ac4b7;
    background: $primary_color;
    height: auto;
    padding: 1rem 0;
-   margin-top: 3rem;
+   margin-top: 4rem;
 }
 
 .location-info {
@@ -17,6 +17,10 @@ $primary_color: #7ac4b7;
    p {
       margin: 0rem;
    }
+}
+
+.navbar-toggler-icon {
+   background-color: #7ac4b7;
 }
 
 .top-bar a {
@@ -38,9 +42,6 @@ $primary_color: #7ac4b7;
    }
    button {
       font: $primary_color;
-   }
-   p {
-      padding: 0;
    }
 }
 

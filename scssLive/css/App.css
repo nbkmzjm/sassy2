@@ -20,7 +20,7 @@
 }
 
 .nav-link {
-  color: whitesmoke !important;
+  color: rgb(0, 0, 0) !important;
 }
 
 #carousel {
@@ -32,7 +32,7 @@
 
 .carousel-inner {
   width: 100vw;
-  height: 50vh;
+  height: 80vh;
 }
 
 .gallery-cont {
@@ -274,7 +274,7 @@
   background: #7ac4b7;
   height: auto;
   padding: 1rem 0;
-  margin-top: 3rem;
+  margin-top: 4rem;
 }
 
 .location-info {
@@ -282,6 +282,10 @@
 }
 .location-info p {
   margin: 0rem;
+}
+
+.navbar-toggler-icon {
+  background-color: #7ac4b7;
 }
 
 .top-bar a {
@@ -305,9 +309,6 @@
 }
 .contact-topbar button {
   font: #7ac4b7;
-}
-.contact-topbar p {
-  padding: 0;
 }
 
 .signInBtn button {

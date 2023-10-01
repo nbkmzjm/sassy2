@@ -217,7 +217,7 @@ export default function HomeScreen() {
                                  >
                                     PEDICURE
                                     <br />
-                                    <button className="btn btn-primary">
+                                    <button className="btn btn-info">
                                        Learn More
                                     </button>
                                  </Link>
@@ -249,7 +249,7 @@ export default function HomeScreen() {
                                  >
                                     MANICURE
                                     <br />
-                                    <button className="btn btn-primary">
+                                    <button className="btn btn-info">
                                        Learn More
                                     </button>
                                  </Link>
@@ -282,7 +282,7 @@ export default function HomeScreen() {
                                  >
                                     ACRYLIC
                                     <br />
-                                    <button className="btn btn-primary">
+                                    <button className="btn btn-info">
                                        Learn More
                                     </button>
                                  </Link>
@@ -317,7 +317,7 @@ export default function HomeScreen() {
                                  >
                                     WAXING
                                     <br />
-                                    <button className="btn btn-primary">
+                                    <button className="btn btn-info">
                                        Learn More
                                     </button>
                                  </Link>
@@ -349,7 +349,7 @@ export default function HomeScreen() {
                                  >
                                     EYELASH EXT
                                     <br />
-                                    <button className="btn btn-primary">
+                                    <button className="btn btn-info">
                                        Learn More
                                     </button>
                                  </Link>
@@ -382,7 +382,7 @@ export default function HomeScreen() {
                                  >
                                     CHILDREN
                                     <br />
-                                    <button className="btn btn-primary">
+                                    <button className="btn btn-info">
                                        Learn More
                                     </button>
                                  </Link>

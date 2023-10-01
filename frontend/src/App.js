@@ -126,12 +126,23 @@ function App() {
                                  <i className="fas fa-envelope"></i>&nbsp;&nbsp;
                                  <a href="/"> Sassynails2.buckeye@gmail.com</a>
                               </p>
+                              <p>
+                                 <i class="fas fa-clock"></i>&nbsp;&nbsp;
+                                 <a href="/">
+                                    {' '}
+                                    Monday-Saturday: 9:30 am - 7:00 pm
+                                 </a>
+                              </p>
+                              <p>
+                                 <i class="fas fa-clock"></i>&nbsp;&nbsp;
+                                 <a href="/"> Sunday: 10:00 am - 6:00 pm</a>
+                              </p>
                            </div>
 
                            <div
                               style={{
                                  position: 'fixed',
-                                 top: '100px',
+                                 top: '135px',
                                  right: '-2.5rem',
                                  zIndex: '3',
                                  opacity: '70%',
@@ -149,14 +160,14 @@ function App() {
                                     </button>
                                  </Link>
                               </div>
-                              <div className="mt-3 me-3 ps-3">
+                              <div className="mt-3 me-3 ps-2">
                                  <Link to={`tel:${phoneNumber}`} className="">
                                     <button
                                        type="button"
                                        className="btn btn-dark  btn-md mb-5 rotated"
                                        onClick={callNowHandler}
                                     >
-                                       Call Now
+                                       Call Now...
                                     </button>
                                  </Link>
                               </div>
@@ -202,12 +213,13 @@ function App() {
                      </div>
                   </div>
                </div>
-               <nav className="navbar bg-dark navbar-dark navbar-expand-lg">
+               <nav className="navbar bg-light navbar-dark navbar-expand-lg">
                   <div className="container">
                      <a href="/" className="navbar-brand">
                         <img
-                           src="https://firebasestorage.googleapis.com/v0/b/sassymc85.appspot.com/o/images%2FsassyLogo.jpeg?alt=media&token=571d12f3-54fa-44eb-9cc3-4ae77f188e74"
+                           src="https://firebasestorage.googleapis.com/v0/b/sassymc85.appspot.com/o/images%2FWhatsApp%20Image%202023-09-30%20at%2015.44.06.jpg?alt=media&token=8746bc73-d36e-4d50-891f-3a0b3c372ea3"
                            alt="sassy"
+                           style={{ height: '100px' }}
                         />
                      </a>
 
@@ -255,8 +267,15 @@ function App() {
                                  Gallery
                               </Link>
                            </li> */}
+
                            <li className="nav-item">
-                              <Link to="/booking" className="nav-link">
+                              <Link
+                                 to="/booking"
+                                 className={`nav-link ${
+                                    activeLink === 'Booking' ? 'active' : ''
+                                 }`}
+                                 onClick={() => navLinkHandler('Booking')}
+                              >
                                  Booking
                               </Link>
                            </li>
