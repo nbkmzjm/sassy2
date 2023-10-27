@@ -7,6 +7,8 @@ import {
    getDoc,
    getDocs,
    onSnapshot,
+   orderBy,
+   query,
    setDoc,
 } from 'firebase/firestore';
 import { db, storage } from '../configReact/firebase';
@@ -108,8 +110,16 @@ const MyModal = () => {
                console.log(error);
             }
          })
-         .catch((error) => {
+         .catch(async (error) => {
             console.error('Error deleting file:', error);
+            if (error.message.includes('does not exist')) {
+               try {
+                  await deleteDoc(doc(db, 'images', image.id));
+               } catch (error) {
+                  toast.error('Cannot delete this media!');
+                  console.log(error);
+               }
+            }
          });
    };
    useEffect(() => {
@@ -134,7 +144,9 @@ const MyModal = () => {
       // fetchData();
 
       //  const fetchImage = async()=>{
-      const unsubcribe = onSnapshot(collection(db, 'images'), (snapshot) => {
+      const imagesRef = collection(db, 'images');
+      const itemsQuery = query(imagesRef, orderBy('createdAt', 'desc'));
+      const unsubcribe = onSnapshot(itemsQuery, (snapshot) => {
          console.log('realtime data updating');
          dispatch({ type: 'FETCH_REQUEST' });
          try {

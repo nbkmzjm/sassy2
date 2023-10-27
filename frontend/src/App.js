@@ -217,7 +217,7 @@ function App() {
                   <div className="container">
                      <a href="/" className="navbar-brand">
                         <img
-                           src="https://firebasestorage.googleapis.com/v0/b/sassymc85.appspot.com/o/images%2FWhatsApp%20Image%202023-09-30%20at%2015.44.06.jpg?alt=media&token=8746bc73-d36e-4d50-891f-3a0b3c372ea3"
+                           src="https://firebasestorage.googleapis.com/v0/b/sassymc85.appspot.com/o/images%2FsassyBrand.jpg?alt=media&token=cfc8ddf6-7ee4-4c68-990e-b31b76b0754c&_gl=1*qsyklf*_ga*NjMzNzc1MDYyLjE2OTAzMDIwNjg.*_ga_CW55HF8NVT*MTY5ODQyNjgyOC4zOS4xLjE2OTg0MzMwMDQuMjguMC4w"
                            alt="sassy"
                            style={{ height: '100px' }}
                         />

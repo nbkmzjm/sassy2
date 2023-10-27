@@ -1,6 +1,13 @@
 import React, { useEffect, useRef, useState } from 'react';
 
-import { addDoc, collection } from 'firebase/firestore';
+import {
+   addDoc,
+   collection,
+   getDocs,
+   query,
+   serverTimestamp,
+   where,
+} from 'firebase/firestore';
 import { db, storage } from '../configReact/firebase';
 import { toast } from 'react-toastify';
 import {
@@ -34,55 +41,70 @@ export default function AdminSreen() {
       console.log('adding images');
       if (!imageFile) return;
       const storageRef = ref(storage, 'images/' + imageFile.name);
-      const uploadTask = uploadBytesResumable(storageRef, imageFile);
-      uploadTask.on(
-         'state_changed',
-         (snapshot) => {
-            const uploadProgress = Math.round(
-               (snapshot.bytesTransferred / snapshot.totalBytes) * 100
-            );
-            setProgress(uploadProgress);
-         },
-         (error) => {
-            console.error('Error uploading file:', error);
-         },
-         async () => {
-            console.log('File uploaded successfully');
-            const downloadURL = await getDownloadURL(uploadTask.snapshot.ref);
-            console.log('File download URL:', downloadURL);
 
-            console.log('Image uploaded successfully');
-            // You can get the download URL of the uploaded image
-            const contentType = uploadTask.snapshot.metadata.contentType;
-            console.log('contentType:', contentType);
-            getDownloadURL(uploadTask.snapshot.ref).then(
-               async (downloadURL) => {
-                  console.log('Download URL:', downloadURL);
-                  try {
-                     const imageRef = collection(db, 'images');
-                     await addDoc(imageRef, {
-                        name: imageFile.name,
-                        imageUrl: downloadURL,
-                        contentType: contentType,
-                     });
-                     console.log('image succesfully Added');
-                     setImageFile(null);
-                     setProgress(0);
-                     if (fileInputRef.current) {
-                        fileInputRef.current.value = '';
+      const filesRef = collection(db, 'images');
+      const q = query(filesRef, where('name', '==', imageFile.name));
+      getDocs(q).then((snapshot) => {
+         if (snapshot.empty) {
+            const uploadTask = uploadBytesResumable(storageRef, imageFile);
+            uploadTask.on(
+               'state_changed',
+               (snapshot) => {
+                  const uploadProgress = Math.round(
+                     (snapshot.bytesTransferred / snapshot.totalBytes) * 100
+                  );
+                  setProgress(uploadProgress);
+               },
+               (error) => {
+                  console.error('Error uploading file:', error);
+               },
+               async () => {
+                  console.log('File uploaded successfully');
+                  const downloadURL = await getDownloadURL(
+                     uploadTask.snapshot.ref
+                  );
+                  console.log('File download URL:', downloadURL);
+
+                  console.log('Image uploaded successfully');
+                  // You can get the download URL of the uploaded image
+                  const contentType = uploadTask.snapshot.metadata.contentType;
+                  console.log('contentType:', contentType);
+                  getDownloadURL(uploadTask.snapshot.ref).then(
+                     async (downloadURL) => {
+                        console.log('Download URL:', downloadURL);
+                        try {
+                           const imageRef = collection(db, 'images');
+                           await addDoc(imageRef, {
+                              name: imageFile.name,
+                              imageUrl: downloadURL,
+                              contentType: contentType,
+                              createdAt: serverTimestamp(),
+                           });
+                           console.log('image succesfully Added');
+                           setImageFile(null);
+                           setProgress(0);
+                           if (fileInputRef.current) {
+                              fileInputRef.current.value = '';
+                           }
+                           var imageGalleryModal = new window.bootstrap.Modal(
+                              document.getElementById('exampleModal')
+                           );
+                           imageGalleryModal.show();
+                        } catch (error) {
+                           console.log(error);
+                           toast.error('Image is not added');
+                        }
                      }
-                     var imageGalleryModal = new window.bootstrap.Modal(
-                        document.getElementById('exampleModal')
-                     );
-                     imageGalleryModal.show();
-                  } catch (error) {
-                     console.log(error);
-                     toast.error('Image is not added');
-                  }
+                  );
                }
             );
+         } else {
+            toast.error(
+               'File with the same name already exists. Please rename file and retry'
+            );
          }
-      );
+      });
+
       // await uploadBytes(storageRef, imageFile)
       //    .then((snapshot) => {
       //       console.log('Image uploaded successfully');
