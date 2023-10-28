@@ -154,7 +154,7 @@ function App() {
                                  <Link to="/booking" className="">
                                     <button
                                        type="button"
-                                       className="btn btn-dark  btn-md mb-5 rotated"
+                                       className="btn btn-info  btn-md mb-5 rotated"
                                     >
                                        Book Now
                                     </button>
@@ -164,7 +164,7 @@ function App() {
                                  <Link to={`tel:${phoneNumber}`} className="">
                                     <button
                                        type="button"
-                                       className="btn btn-dark  btn-md mb-5 rotated"
+                                       className="btn btn-info  btn-md mb-5 rotated"
                                        onClick={callNowHandler}
                                     >
                                        Call Now...
@@ -178,7 +178,7 @@ function App() {
                                  >
                                     <button
                                        type="button"
-                                       className="btn btn-dark  btn-md mt-3 rotated "
+                                       className="btn btn-info  btn-md mt-3 rotated btn"
                                        onClick={getDirectionHandler}
                                     >
                                        Get Direction
@@ -189,7 +189,7 @@ function App() {
                                  <Link to="/services" className="">
                                     <button
                                        type="button"
-                                       className="btn btn-dark  btn-md mt-5 rotated "
+                                       className="btn btn-info  btn-md mt-5 rotated "
                                     >
                                        Services
                                     </button>
